@@ -1,0 +1,18 @@
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe.config
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.pdb
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.csprojResolveAssemblyReference.cache
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.Form1.resources
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.Properties.Resources.resources
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.csproj.GenerateResource.Cache
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.exe
+c:\users\turkmen\documents\visual studio 2013\Projects\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.pdb
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe.config
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.exe
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.pdb
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.pdb
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.Form1.resources
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.Properties.Resources.resources
+C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.csproj.GenerateResource.Cache
