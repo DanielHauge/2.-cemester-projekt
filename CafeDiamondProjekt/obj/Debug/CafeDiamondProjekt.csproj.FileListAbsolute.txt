@@ -16,3 +16,6 @@ C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiam
 C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.Form1.resources
 C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.Properties.Resources.resources
 C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe.config
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.exe
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.pdb
