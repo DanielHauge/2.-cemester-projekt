@@ -19,3 +19,6 @@ C:\Users\Daniel\Desktop\CafeDiamondProjekt\CafeDiamondProjekt\obj\Debug\CafeDiam
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe.config
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.exe
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.pdb
+C:\Users\RAMAL\Desktop\Cemester Projekt Mappe\2.-cemester-projekt\CafeDiamondProjekt\bin\Debug\CafeDiamondProjekt.exe.config
+C:\Users\RAMAL\Desktop\Cemester Projekt Mappe\2.-cemester-projekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.exe
+C:\Users\RAMAL\Desktop\Cemester Projekt Mappe\2.-cemester-projekt\CafeDiamondProjekt\obj\Debug\CafeDiamondProjekt.pdb
