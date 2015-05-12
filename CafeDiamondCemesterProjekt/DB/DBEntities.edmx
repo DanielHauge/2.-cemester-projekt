@@ -11,7 +11,19 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Bookings" EntityType="DBModel.Booking" />
+        </EntityContainer>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Navn" Type="String" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" />
+          <Property Name="Dato" Type="String" Nullable="false" />
+          <Property Name="Tid" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

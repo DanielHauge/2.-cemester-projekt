@@ -3,39 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Booking
+namespace CafeDiamondCemesterProjekt.model
 {
-	private int Bord
-	{
-		get;
-		set;
-	}
+    public class Booking
+    {
+        public int Bord
+        {
+            get;
+            set;
+        }
 
-	private string Dato
-	{
-		get;
-		set;
-	}
+        public DateTime Dato
+        {
+            get;
+            set;
+        }
 
-	private string Tid
-	{
-		get;
-		set;
-	}
+        public int KundeID
+        {
+            get;
+            set;
+        }
 
-	private int KundeID
-	{
-		get;
-		set;
-	}
+        public int BookingID
+        {
+            get;
+            set;
+        }
 
-	private int BookingID
-	{
-		get;
-		set;
-	}
-
-
-
+    }
 }
 

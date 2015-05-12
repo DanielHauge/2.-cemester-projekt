@@ -1,16 +1,61 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="DataSet1" 
-                  targetNamespace="http://tempuri.org/DataSet1.xsd"
-                  elementFormDefault="qualified"
-                  attributeFormDefault="qualified"
-                  xmlns="http://tempuri.org/DataSet1.xsd"
-                  xmlns:mstns="http://tempuri.org/DataSet1.xsd"
-                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
-                  xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-    <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true">
-        <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded"></xs:choice>
-        </xs:complexType>
-    </xs:element>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CafeDiamondCemesterProjekt.Properties.Settings.GlobalReference.Default.DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BookingDTTableAdapter" GeneratorDataComponentClassName="BookingDTTableAdapter" Name="BookingDT" UserDataComponentName="BookingDTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Booking.*
+FROM            Booking</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Dato" DataSetColumn="Dato" />
+              <Mapping SourceColumn="Bord" DataSetColumn="Bord" />
+              <Mapping SourceColumn="KundeId" DataSetColumn="KundeId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BookingDT" msprop:Generator_TableClassName="BookingDTDataTable" msprop:Generator_TableVarName="tableBookingDT" msprop:Generator_TablePropName="BookingDT" msprop:Generator_RowDeletingName="BookingDTRowDeleting" msprop:Generator_RowChangingName="BookingDTRowChanging" msprop:Generator_RowEvHandlerName="BookingDTRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingDTRowDeleted" msprop:Generator_UserTableName="BookingDT" msprop:Generator_RowChangedName="BookingDTRowChanged" msprop:Generator_RowEvArgName="BookingDTRowChangeEvent" msprop:Generator_RowClassName="BookingDTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Dato" msprop:Generator_ColumnVarNameInTable="columnDato" msprop:Generator_ColumnPropNameInRow="Dato" msprop:Generator_ColumnPropNameInTable="DatoColumn" msprop:Generator_UserColumnName="Dato" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Bord" msprop:Generator_ColumnVarNameInTable="columnBord" msprop:Generator_ColumnPropNameInRow="Bord" msprop:Generator_ColumnPropNameInTable="BordColumn" msprop:Generator_UserColumnName="Bord" type="xs:int" minOccurs="0" />
+              <xs:element name="KundeId" msprop:Generator_ColumnVarNameInTable="columnKundeId" msprop:Generator_ColumnPropNameInRow="KundeId" msprop:Generator_ColumnPropNameInTable="KundeIdColumn" msprop:Generator_UserColumnName="KundeId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BookingDT" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
 </xs:schema>

@@ -25,5 +25,6 @@ namespace CafeDiamondCemesterProjekt.DB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Booking> Bookings { get; set; }
     }
 }

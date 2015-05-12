@@ -3,28 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Kalender
+namespace CafeDiamondCemesterProjekt.model
 {
-	public List<Booking> Bookingliste
-	{
-		get;
-		set;
-	}
+    public class Kalender
+    {
+        public List<Booking> Bookingliste
+        {
+            get;
+            set;
+        }
 
-	public void TilføjBooking(object Bord, object Dato, object Tid, object KundeID)
-	{
-		//Ikke implementeret
-	}
+        public void TilføjBooking(int Bord, DateTime Dato, int KID)
+        {
+            DB.DBEntities Ent = new DB.DBEntities();
 
-	public void UpdaterDatabase()
-	{
-		// ikke implementeret
-	}
+            Booking B = new Booking();
+            B.Bord = Bord;
+            B.Dato = Dato;
+            B.KundeID = KID;
 
-	public void LæsDatabase()
-	{
-		// Ikke implementeret
-	}
+            
 
+
+        }
+
+        public void UpdaterDatabase()
+        {
+            // ikke implementeret
+        }
+
+        public void LæsDatabase()
+        {
+            // Ikke implementeret
+        }
+
+    }
 }
-
