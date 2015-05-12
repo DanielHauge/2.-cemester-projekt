@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CafeDiamondCemesterProjekt.DB;
 
-namespace CafeDiamondCemesterProjekt.model
-{
+namespace CafeDiamondCemesterProjekt.model{
+
     public class Kalender
     {
         public List<Booking> Bookingliste
@@ -15,14 +15,17 @@ namespace CafeDiamondCemesterProjekt.model
             set;
         }
 
-        public static void TilføjBooking(int Bord, DateTime Dato, int KID)
+        public void TilføjBooking(int Bord, DateTime Dato, string KID)
         {
-            
+            DB.DBEntityBooking ent = new DB.DBEntityBooking();
 
-            Booking booking = new Booking();
+            DB.Booking booking = new DB.Booking();
             booking.Bord = Bord;
             booking.KundeID = KID;
             booking.Dato = Dato;
+
+            ent.Bookings.Add(booking);
+            ent.SaveChanges();
         }
 
         public void UpdaterDatabase()

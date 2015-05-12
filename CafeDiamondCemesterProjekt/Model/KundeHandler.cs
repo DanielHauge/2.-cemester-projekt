@@ -6,7 +6,7 @@ namespace CafeDiamondCemesterProjekt.model
 {
     public class KundeHandler
     {
-        public List<Kunde> KundeListe
+        public List<DB.Kunde> KundeListe
         {
             get;
             set;
@@ -18,9 +18,17 @@ namespace CafeDiamondCemesterProjekt.model
             set;
         }
 
-        public void TilføjKunde(object Navn, object Telefon)
+        public void TilføjKunde(string Navn, string Email, int Saldo)
         {
-            // Ikke implementeret
+            DB.DBEntityKunde entK = new DB.DBEntityKunde();
+
+            DB.Kunde K = new DB.Kunde();
+            K.Email = Email;
+            K.Navn = Navn;
+            K.Saldo = Saldo;
+
+            entK.Kundes.Add(K);
+            entK.SaveChanges();
         }
 
         public void UpdaterDatabase()

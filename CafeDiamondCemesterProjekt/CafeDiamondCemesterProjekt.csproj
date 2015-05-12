@@ -85,25 +85,55 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DB\DataEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataEntity.Context.tt</DependentUpon>
+    <Compile Include="DB\Booking.cs">
+      <DependentUpon>BookingEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\DataEntity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataEntity.tt</DependentUpon>
+    <Compile Include="DB\BookingDT.cs">
+      <DependentUpon>BookingDT.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DB\DBEntity.Designer.cs">
+    <Compile Include="DB\BookingDT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBEntity.edmx</DependentUpon>
+      <DependentUpon>BookingDT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DB\DataSet.Designer.cs">
+    <Compile Include="DB\BookingEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet.xsd</DependentUpon>
+      <DependentUpon>BookingEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BookingEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BookingEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Kunde.cs">
+      <DependentUpon>KundeEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KundeDT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KundeDT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KundeEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KundeEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KundeEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KundeEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KundeEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KundeEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -112,12 +142,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Adminstrator.cs" />
-    <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Info.cs" />
     <Compile Include="Model\InfoElement.cs" />
     <Compile Include="Model\Kalender.cs" />
-    <Compile Include="Model\Kunde.cs" />
     <Compile Include="Model\KundeHandler.cs" />
     <Compile Include="Model\Produkt.cs" />
     <Compile Include="Model\RedigeringsHandler.cs" />
@@ -138,33 +166,61 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DB\DBEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DB\DataEntity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBEntity.edmx</DependentUpon>
-      <LastGenOutput>DataEntity.Context.cs</LastGenOutput>
+    <None Include="DB\BookingDT.xsc">
+      <DependentUpon>BookingDT.xsd</DependentUpon>
     </None>
-    <None Include="DB\DBEntity.edmx.diagram">
-      <DependentUpon>DBEntity.edmx</DependentUpon>
-    </None>
-    <None Include="DB\DataEntity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBEntity.edmx</DependentUpon>
-      <LastGenOutput>DataEntity.cs</LastGenOutput>
-    </None>
-    <None Include="DB\DataSet.xsc">
-      <DependentUpon>DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DB\DataSet.xsd">
+    <None Include="DB\BookingDT.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookingDT.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DB\DataSet.xss">
-      <DependentUpon>DataSet.xsd</DependentUpon>
+    <None Include="DB\BookingDT.xss">
+      <DependentUpon>BookingDT.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="DB\BookingEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookingEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\BookingEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingEntity.edmx</DependentUpon>
+      <LastGenOutput>BookingEntity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\BookingEntity.edmx.diagram">
+      <DependentUpon>BookingEntity.edmx</DependentUpon>
+    </None>
+    <None Include="DB\BookingEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingEntity.edmx</DependentUpon>
+      <LastGenOutput>BookingEntity.cs</LastGenOutput>
+    </None>
+    <None Include="DB\KundeDT.xsc">
+      <DependentUpon>KundeDT.xsd</DependentUpon>
+    </None>
+    <None Include="DB\KundeDT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KundeDT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DB\KundeDT.xss">
+      <DependentUpon>KundeDT.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="DB\KundeEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KundeEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\KundeEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KundeEntity.edmx</DependentUpon>
+      <LastGenOutput>KundeEntity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB\KundeEntity.edmx.diagram">
+      <DependentUpon>KundeEntity.edmx</DependentUpon>
+    </None>
+    <None Include="DB\KundeEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KundeEntity.edmx</DependentUpon>
+      <LastGenOutput>KundeEntity.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -202,10 +258,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="DB\DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DB\DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="DB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
