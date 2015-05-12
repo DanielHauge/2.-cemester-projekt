@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CafeDiamondCemesterProjekt.DB;
 
 namespace CafeDiamondCemesterProjekt.model
 {
@@ -13,16 +14,17 @@ namespace CafeDiamondCemesterProjekt.model
             set;
         }
 
-        public void TilføjBooking(int Bord, DateTime Dato, int KID)
+        public static void TilføjBooking(int Bord, DateTime Dato, int KID)
         {
-            DB.DBEntities Ent = new DB.DBEntities();
+            DB.DBEntity Ent = new DBEntity();
 
             Booking B = new Booking();
             B.Bord = Bord;
             B.Dato = Dato;
             B.KundeID = KID;
 
-            
+            //Ent.Bookings.Add(B);
+            //Ent.SaveChanges();
 
 
         }

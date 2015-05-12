@@ -13,10 +13,10 @@ namespace CafeDiamondCemesterProjekt.DB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBEntities : DbContext
+    public partial class DBEntities1 : DbContext
     {
-        public DBEntities()
-            : base("name=DBEntities")
+        public DBEntities1()
+            : base("name=DBEntities1")
         {
         }
     

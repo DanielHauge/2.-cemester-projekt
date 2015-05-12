@@ -2,36 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class Info
+namespace CafeDiamondCemesterProjekt.model
 {
-	public List<Event> Eventliste
+    public class Info
     {
-		get;
-		set;
-	}
+        public List<Event> Eventliste
+        {
+            get;
+            set;
+        }
 
-	public List<Produkt> Sortiment
-	{
-		get;
-		set;
-	}
+        public List<Produkt> Sortiment
+        {
+            get;
+            set;
+        }
 
-	public RedigeringsHandler RedigeringsHandler
-	{
-		get;
-		set;
-	}
+        public RedigeringsHandler RedigeringsHandler
+        {
+            get;
+            set;
+        }
 
-	public void TilføjInfoElement()
-	{
-		//Endnu ikke implementeret
-	}
+        public void TilføjInfoElement()
+        {
+            //Endnu ikke implementeret
+        }
 
-	public void LæsInfoElementer()
-	{
-		//Endnu ikke implementeret.
-	}
+        public void LæsInfoElementer()
+        {
+            //Endnu ikke implementeret.
+        }
 
+    }
 }
-

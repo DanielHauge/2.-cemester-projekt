@@ -15,9 +15,8 @@ namespace CafeDiamondCemesterProjekt.DB
     public partial class Booking
     {
         public int Id { get; set; }
-        public string Navn { get; set; }
-        public string Telefon { get; set; }
-        public string Dato { get; set; }
-        public string Tid { get; set; }
+        public Nullable<int> Bord { get; set; }
+        public string KundeID { get; set; }
+        public Nullable<System.DateTime> Dato { get; set; }
     }
 }
