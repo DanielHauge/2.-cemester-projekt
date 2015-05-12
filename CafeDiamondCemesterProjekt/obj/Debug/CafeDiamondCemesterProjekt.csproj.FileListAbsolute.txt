@@ -1,1 +1,2 @@
 c:\users\daniel\documents\visual studio 2013\Projects\CafeDiamondCemesterProjekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.config
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.config
