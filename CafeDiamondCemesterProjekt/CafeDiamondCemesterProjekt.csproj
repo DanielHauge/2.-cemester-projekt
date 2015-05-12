@@ -85,9 +85,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DB\Booking.cs">
-      <DependentUpon>DataEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\DataEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

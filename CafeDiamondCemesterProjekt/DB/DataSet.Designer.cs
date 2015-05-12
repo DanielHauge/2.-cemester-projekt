@@ -849,7 +849,7 @@ namespace CafeDiamondCemesterProjekt.DB.DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Booking] WHERE (([Id] = @Original_Id) AND ((@IsNull_Bord = 1 AND [Bord] IS NULL) OR ([Bord] = @Original_Bord)) AND ((@IsNull_KundeID = 1 AND [KundeID] IS NULL) OR ([KundeID] = @Original_KundeID)) AND ((@IsNull_Dato = 1 AND [Dato] IS NULL) OR ([Dato] = @Original_Dato)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Booking] WHERE (([Id] = @Original_Id) AND ((@IsNull_Bord = 1 AND [Bord] IS NULL) OR ([Bord] = @Original_Bord)) AND ((@IsNull_KundeID = 1 AND [KundeID] IS NULL) OR ([KundeID] = @Original_KundeID)) AND ((@IsNull_Dato = 1 AND [Dato] IS NULL) OR ([Dato] = @Original_Dato)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Bord", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bord", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -860,8 +860,9 @@ namespace CafeDiamondCemesterProjekt.DB.DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Dato", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dato", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Booking] ([Id], [Bord], [KundeID], [Dato]) VALUES (@Id, @Bord, @Kund" +
-                "eID, @Dato);\r\nSELECT Id, Bord, KundeID, Dato FROM Booking WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Booking] ([Id], [Bord], [KundeID], [Dato]) VALUES (@Id, @Bord," +
+                " @KundeID, @Dato);\r\nSELECT Id, Bord, KundeID, Dato FROM Booking WHERE (Id = @Id)" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bord", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -869,7 +870,7 @@ namespace CafeDiamondCemesterProjekt.DB.DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dato", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Booking] SET [Id] = @Id, [Bord] = @Bord, [KundeID] = @KundeID, [Dato] = @Dato WHERE (([Id] = @Original_Id) AND ((@IsNull_Bord = 1 AND [Bord] IS NULL) OR ([Bord] = @Original_Bord)) AND ((@IsNull_KundeID = 1 AND [KundeID] IS NULL) OR ([KundeID] = @Original_KundeID)) AND ((@IsNull_Dato = 1 AND [Dato] IS NULL) OR ([Dato] = @Original_Dato)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Booking] SET [Id] = @Id, [Bord] = @Bord, [KundeID] = @KundeID, [Dato] = @Dato WHERE (([Id] = @Original_Id) AND ((@IsNull_Bord = 1 AND [Bord] IS NULL) OR ([Bord] = @Original_Bord)) AND ((@IsNull_KundeID = 1 AND [KundeID] IS NULL) OR ([KundeID] = @Original_KundeID)) AND ((@IsNull_Dato = 1 AND [Dato] IS NULL) OR ([Dato] = @Original_Dato)));
 SELECT Id, Bord, KundeID, Dato FROM Booking WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -898,7 +899,7 @@ SELECT Id, Bord, KundeID, Dato FROM Booking WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Booking.*\r\nFROM            Booking";
+            this._commandCollection[0].CommandText = "SELECT Id, Bord, KundeID, Dato FROM dbo.Booking";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

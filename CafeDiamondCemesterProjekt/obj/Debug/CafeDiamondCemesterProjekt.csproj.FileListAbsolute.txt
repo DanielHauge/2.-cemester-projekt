@@ -1,6 +1,4 @@
 c:\users\daniel\documents\visual studio 2013\Projects\CafeDiamondCemesterProjekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.config
-C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.config
-C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\MainWindow.baml
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\MainWindow.g.cs
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\App.g.cs
@@ -9,3 +7,4 @@ C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.g.resources
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.Properties.Resources.resources
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.config

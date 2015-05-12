@@ -25,12 +25,6 @@ namespace CafeDiamondCemesterProjekt.model
             set;
         }
 
-        public int BookingID
-        {
-            get;
-            set;
-        }
-
     }
 }
 
