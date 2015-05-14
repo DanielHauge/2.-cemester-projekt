@@ -77,10 +77,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -90,7 +86,6 @@
     </Compile>
     <Compile Include="DB\BookingDT.cs">
       <DependentUpon>BookingDT.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DB\BookingDT.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -135,12 +130,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KundeEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="ProdukterEvents.xaml.cs">
+      <DependentUpon>ProdukterEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin.xaml.cs">
+      <DependentUpon>UserAdmin.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Adminstrator.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Info.cs" />
@@ -233,7 +233,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
   </ItemGroup>
@@ -258,6 +257,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\hookah.jpg" />
+    <Resource Include="Assets\button.png" />
     <Content Include="DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -272,6 +273,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProdukterEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace CafeDiamondCemesterProjekt
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ProdukterEvents.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProdukterEvents : Window
     {
-        public MainWindow()
+        public ProdukterEvents()
         {
             InitializeComponent();
         }

@@ -1,8 +1,25 @@
 ﻿<Window x:Class="CafeDiamondCemesterProjekt.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="assets/hookah.jpg"/>
+        </Grid.Background>
+        <Button Content="Booking" HorizontalAlignment="Left" Margin="59,114,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button Content="User Admin" HorizontalAlignment="Left" Margin="59,161,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="59,208,0,0" VerticalAlignment="Top" Width="153" Height="28" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
+
