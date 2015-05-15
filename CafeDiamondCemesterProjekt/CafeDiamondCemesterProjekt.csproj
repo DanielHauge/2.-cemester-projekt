@@ -81,6 +81,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="DB\Booking.cs">
       <DependentUpon>BookingEntity.tt</DependentUpon>
     </Compile>
@@ -130,6 +131,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KundeEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Viewmodel.cs" />
     <Compile Include="View\Bookinger.xaml.cs">
       <DependentUpon>Bookinger.xaml</DependentUpon>
     </Compile>
@@ -235,9 +237,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>

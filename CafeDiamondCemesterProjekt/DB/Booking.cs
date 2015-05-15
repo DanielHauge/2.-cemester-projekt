@@ -16,7 +16,7 @@ namespace CafeDiamondCemesterProjekt.DB
     {
         public int Id { get; set; }
         public Nullable<int> Bord { get; set; }
-        public string KundeID { get; set; }
+        public int KundeID { get; set; }
         public Nullable<System.DateTime> Dato { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace CafeDiamondCemesterProjekt.model{
             set;
         }
 
-        public void TilføjBooking(int Bord, DateTime Dato, string KID)
+        public static void TilføjBooking(int Bord, DateTime Dato, int KID)
         {
             DB.DBEntityBooking ent = new DB.DBEntityBooking();
 

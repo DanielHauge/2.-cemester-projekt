@@ -18,7 +18,7 @@ namespace CafeDiamondCemesterProjekt.model
             set;
         }
 
-        public void TilføjKunde(string Navn, string Email, int Saldo)
+        public static void TilføjKunde(string Navn, string Email, int Saldo)
         {
             DB.DBEntityKunde entK = new DB.DBEntityKunde();
 

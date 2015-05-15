@@ -42,9 +42,15 @@ namespace CafeDiamondCemesterProjekt
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            //if (login == false){
             NavigationService nav = NavigationService.GetNavigationService(this);
             View.UserAdmin p = new UserAdmin();
             DenneFrame.Navigate(p);
+            //} else {
+            //NavigationService nav = NavigationService.GetNavigationService(this);
+           // View.UserAdmin p = new UserAdmin();
+           // DenneFrame.Navigate(p);
+            // }
         }
     }
 }
