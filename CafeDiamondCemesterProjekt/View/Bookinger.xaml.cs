@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CafeDiamondCemesterProjekt
+namespace CafeDiamondCemesterProjekt.View
 {
     /// <summary>
-    /// Interaction logic for ProdukterEvents.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class ProdukterEvents : Window
+    public partial class Bookinger : Page
     {
-        public ProdukterEvents()
+        public Bookinger()
         {
             InitializeComponent();
         }

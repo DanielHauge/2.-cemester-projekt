@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kunde">
+    <Key>
+      <PropertyRef Name="KundeID" />
+    </Key>
+    <Property Name="KundeID" Type="Int32" Nullable="false" />
+    <Property Name="Navn" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Saldo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DBEntityKunde" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kundes" EntityType="Self.Kunde" />
+  </EntityContainer>
+</Schema>

@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CafeDiamondCemesterProjekt
+namespace CafeDiamondCemesterProjekt.View
 {
     /// <summary>
     /// Interaction logic for UserAdmin.xaml
     /// </summary>
-    public partial class UserAdmin : Window
+    public partial class UserAdmin : Page
     {
         public UserAdmin()
         {

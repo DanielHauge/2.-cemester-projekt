@@ -5,21 +5,22 @@
         <Grid.Background>
             <ImageBrush ImageSource="assets/hookah.jpg"/>
         </Grid.Background>
-        <Button Content="Booking" HorizontalAlignment="Left" Margin="59,114,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White">
+        <Button Content="Booking" HorizontalAlignment="Left" Margin="59,114,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button Content="User Admin" HorizontalAlignment="Left" Margin="59,161,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White">
+        <Button Content="User Admin" HorizontalAlignment="Left" Margin="59,161,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White" Click="Button_Click_2">
             <Button.Background>
                 <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="59,208,0,0" VerticalAlignment="Top" Width="153" Height="28" Foreground="White">
+        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="59,208,0,0" VerticalAlignment="Top" Width="153" Height="28" Foreground="White" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
+        <Frame x:Name="DenneFrame" HorizontalAlignment="Left" Height="609" Margin="229,114,-534,-219" VerticalAlignment="Top" Width="1065" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
 

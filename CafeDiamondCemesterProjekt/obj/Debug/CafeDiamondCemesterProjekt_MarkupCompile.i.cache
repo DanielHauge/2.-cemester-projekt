@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Turkmen\Desktop\ProjektGithub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\
 CafeDiamondCemesterProjekt
 none
 false
 DEBUG;TRACE
-C:\Users\Turkmen\Desktop\ProjektGithub\2.-cemester-projekt\CafeDiamondCemesterProjekt\App.xaml
-3465640443
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\App.xaml
+41386158193
 41943705865
-30-1025858899
-17515491667
-MainWindow.xaml;ProdukterEvents.xaml;UserAdmin.xaml;
+31846211961
+17564233230
+MainWindow.xaml;View\Bookinger.xaml;View\ProdukterEvents.xaml;View\UserAdmin.xaml;
 
 False
 

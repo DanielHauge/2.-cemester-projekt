@@ -130,10 +130,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KundeEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ProdukterEvents.xaml.cs">
+    <Compile Include="View\Bookinger.xaml.cs">
+      <DependentUpon>Bookinger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProdukterEvents.xaml.cs">
       <DependentUpon>ProdukterEvents.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserAdmin.xaml.cs">
+    <Compile Include="View\UserAdmin.xaml.cs">
       <DependentUpon>UserAdmin.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -234,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -279,11 +281,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProdukterEvents.xaml">
+    <Page Include="View\Bookinger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserAdmin.xaml">
+    <Page Include="View\ProdukterEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
