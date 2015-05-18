@@ -29,5 +29,10 @@ namespace CafeDiamondCemesterProjekt.View
         {
             
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

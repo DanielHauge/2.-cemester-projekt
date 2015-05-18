@@ -23,7 +23,7 @@
         <Button Content="Tilføj Booking" HorizontalAlignment="Left" Margin="45,89,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="Button_Click"/>
         <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="411,91,0,0" VerticalAlignment="Top" Width="122" Height="34"/>
         <Button Content="Tilføj" HorizontalAlignment="Left" Margin="45,31,0,0" VerticalAlignment="Top" Width="129" Height="33"/>
-        <ListView HorizontalAlignment="Left" Height="301" Margin="368,184,0,0" VerticalAlignment="Top" Width="180">
+        <ListView HorizontalAlignment="Left" Height="301" Margin="368,184,0,0" VerticalAlignment="Top" Width="180" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
