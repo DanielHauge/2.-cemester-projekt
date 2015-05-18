@@ -1,26 +1,26 @@
 ﻿<Window x:Class="CafeDiamondCemesterProjekt.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterScreen">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Height="786" Width="1366" WindowState="Maximized">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="assets/hookah.jpg"/>
+            <ImageBrush ImageSource="assets/hookah.jpg" Stretch="Uniform"/>
         </Grid.Background>
-        <Button Content="Booking" HorizontalAlignment="Left" Margin="59,114,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White" Click="Button_Click">
+        <Button Content="Booking" HorizontalAlignment="Left" Margin="29,119,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button Content="User Admin" HorizontalAlignment="Left" Margin="59,161,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White" Click="Button_Click_2">
+        <Button Content="User Admin" HorizontalAlignment="Left" Margin="29,174,0,0" VerticalAlignment="Top" Width="153" Height="29" Foreground="White" Click="Button_Click_2">
             <Button.Background>
                 <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="59,208,0,0" VerticalAlignment="Top" Width="153" Height="28" Foreground="White" Click="Button_Click_1">
+        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="29,221,0,0" VerticalAlignment="Top" Width="153" Height="28" Foreground="White" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/button.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Frame x:Name="DenneFrame" HorizontalAlignment="Left" Height="609" Margin="229,114,-534,-219" VerticalAlignment="Top" Width="1065" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="DenneFrame" HorizontalAlignment="Left" Height="609" Margin="187,138,0,0" VerticalAlignment="Top" Width="1140" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
 

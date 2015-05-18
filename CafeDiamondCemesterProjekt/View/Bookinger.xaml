@@ -6,6 +6,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="494" d:DesignWidth="745"
 	Title="Page1">
+    <Page.Background>
+        <ImageBrush ImageSource="/CafeDiamondCemesterProjekt;component/Assets/background1.png"/>
+    </Page.Background>
 
     <Grid>
 

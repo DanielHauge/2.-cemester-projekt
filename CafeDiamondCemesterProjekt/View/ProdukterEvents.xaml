@@ -4,29 +4,30 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="ProdukterEvents" Height="486" Width="739">
+	Title="ProdukterEvents" Height="869.684" Width="1402.225">
 
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="484" VerticalAlignment="Top" Width="740">
-            <TabItem Header="Produkter"/>
+        <TabControl HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="1017">
+            <TabItem Header="Produkter">
+                <TabControl Margin="10,10,4,38" TabStripPlacement="Left" IsSynchronizedWithCurrentItem="True">
+                    <TabItem Header="Vandpibe">
+                        <Grid Background="#FFE5E5E5" Margin="0,0,0,-1">
+                            <TextBox HorizontalAlignment="Left" Height="152" Margin="10,247,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="624"/>
+                            <Image HorizontalAlignment="Left" Height="229" Margin="10,13,0,0" VerticalAlignment="Top" Width="275"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="514,220,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
+                            <CheckBox Content="På lager" HorizontalAlignment="Left" Margin="514,200,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Drikkevare">
+                        <Grid Background="#FFE5E5E5"/>
+                    </TabItem>
+                    <TabItem Header="Snacks"/>
+                    <TabItem Header="Diverse"/>
+                </TabControl>
+            </TabItem>
             <TabItem Header="Events">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabControl Margin="10,10,4,19" TabStripPlacement="Left" IsSynchronizedWithCurrentItem="True">
-                <TabItem Header="Vandpibe">
-                    <Grid Background="#FFE5E5E5" Margin="0,0,0,17">
-                        <TextBox HorizontalAlignment="Left" Height="152" Margin="10,247,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="624"/>
-                        <Image HorizontalAlignment="Left" Height="229" Margin="10,13,0,0" VerticalAlignment="Top" Width="275"/>
-                        <TextBox HorizontalAlignment="Left" Height="22" Margin="514,220,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-                        <RadioButton Content="På lager" HorizontalAlignment="Left" Margin="514,200,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    </Grid>
-                </TabItem>
-                <TabItem Header="Drikkevare">
-                    <Grid Background="#FFE5E5E5"/>
-                </TabItem>
-                <TabItem Header="Snacks"/>
-                <TabItem Header="Diverse"/>
-            </TabControl>
         </TabControl>
     </Grid>
 </Page>

@@ -261,6 +261,7 @@
   <ItemGroup>
     <Resource Include="Assets\hookah.jpg" />
     <Resource Include="Assets\button.png" />
+    <Resource Include="Assets\background1.png" />
     <Content Include="DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -24,13 +24,14 @@ namespace CafeDiamondCemesterProjekt
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            View.Bookinger p = new Bookinger();
-            DenneFrame.Navigate(p);
+            View.Bookinger pe = new Bookinger();
+            DenneFrame.Navigate(pe);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
