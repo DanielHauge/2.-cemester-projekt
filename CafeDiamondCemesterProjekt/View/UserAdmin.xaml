@@ -11,7 +11,7 @@
         <TextBox HorizontalAlignment="Left" Height="26" Margin="51,194,0,0" TextWrapping="Wrap" Text="Mobil" VerticalAlignment="Top" Width="140"/>
         <TextBox HorizontalAlignment="Left" Height="27" Margin="51,142,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="140"/>
         <DataGrid HorizontalAlignment="Left" Margin="357,98,0,0" VerticalAlignment="Top" Height="309" Width="354"/>
-        <Button Content="Rediger" HorizontalAlignment="Left" Margin="556,422,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Rediger" HorizontalAlignment="Left" Margin="465,422,0,0" VerticalAlignment="Top" Width="166"/>
         <Button Content="Slet" HorizontalAlignment="Left" Margin="636,422,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="51,57,0,0" VerticalAlignment="Top" Foreground="White" Width="97"/>
         <Label Content="Søg Bruger :" HorizontalAlignment="Left" Margin="357,57,0,0" VerticalAlignment="Top" Foreground="White"/>
