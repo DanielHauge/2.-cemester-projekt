@@ -26,10 +26,11 @@
             <Button Content="Opret" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="180" Command="{Binding TilføjBruger, Mode=OneWay}"/>
             <PasswordBox HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Height="26" Width="180" Password="Koden" IsEnabled="False"/>
             <TextBox HorizontalAlignment="Left" Height="25" Margin="10,159,0,0" TextWrapping="Wrap" Text="Mobil" VerticalAlignment="Top" Width="180" IsEnabled="False"/>
-            <TextBox HorizontalAlignment="Left" Height="26" Margin="10,128,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="180" DataContext="{Binding Email}"/>
-            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,98,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" Width="180" DataContext="{Binding navn}"/>
+            <TextBox HorizontalAlignment="Left" Height="26" Margin="10,128,0,0" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="180"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,98,0,0" TextWrapping="Wrap" Text="{Binding navn}" VerticalAlignment="Top" Width="180"/>
             <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Foreground="White" Width="180" Height="25" Background="#FFB92D1E"/>
-            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,220,0,0" TextWrapping="Wrap" Text="Fyld Saldo" VerticalAlignment="Top" Width="180" DataContext="{Binding Saldo}"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,220,0,0" TextWrapping="Wrap" Text="{Binding Saldo}" VerticalAlignment="Top" Width="180"/>
+            <Label Content="{Binding status}" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Height="49" Width="180" FontSize="18"/>
         </Grid>
 
     </Grid>

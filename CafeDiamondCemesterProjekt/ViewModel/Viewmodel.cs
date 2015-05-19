@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Xml.Linq;
 using CafeDiamondCemesterProjekt.Common;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace CafeDiamondCemesterProjekt.ViewModel
 {
@@ -21,9 +22,10 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public int KID { get; set; }
 
         public string navn {get; set;}
+        
         public string Email { get; set; }
         public int Saldo { get; set; }
-
+        public string status { get; set; }
 
 
 
@@ -32,8 +34,14 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
         public void TilfBruger()
         {
-
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB.mdf';Integrated Security=True";
+            
+            OnPropertyChanged("navn");
+            OnPropertyChanged("Email");
+            OnPropertyChanged("Saldo");
+            Debug.WriteLine(navn);
+            Debug.WriteLine(Email);
+            Debug.WriteLine(Saldo);
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -42,8 +50,18 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
             SqlCommand command = new SqlCommand(insertSql, connection);
             connection.Open();
-            
-            command.ExecuteNonQuery();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                status = "Kunde oprettet";
+                OnPropertyChanged("status");
+            }
+            catch (Exception)
+            {
+                status = "Der opstod en fejl";
+                OnPropertyChanged("status");
+            }
             //NEW BOOKING ADDED
             connection.Close();
         
@@ -54,6 +72,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             OnPropertyChanged("tid");
             OnPropertyChanged("bord");
             OnPropertyChanged("KID");
+            
 
             var tidd = tid.ToLongDateString();
 
@@ -66,8 +85,16 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
             SqlCommand command = new SqlCommand(insertSql, connection);
             connection.Open();
-            
-            command.ExecuteNonQuery();
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                
+            }
             //NEW BOOKING ADDED
             connection.Close();
         }
