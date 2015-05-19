@@ -15,23 +15,26 @@
         <Grid.Background>
             <ImageBrush ImageSource="/CafeDiamondCemesterProjekt;component/Assets/background1.png"/>
         </Grid.Background>
-        <DataGrid HorizontalAlignment="Left" Margin="266,55,0,0" VerticalAlignment="Top" Height="332" Width="445"/>
         <Button Content="Rediger" HorizontalAlignment="Left" Margin="266,403,0,0" VerticalAlignment="Top" Width="186" Height="21" IsEnabled="False"/>
         <Button Content="Slet" HorizontalAlignment="Left" Margin="607,403,0,0" VerticalAlignment="Top" Width="104" Height="21" IsEnabled="False"/>
         <Label Content="Søg Bruger :" HorizontalAlignment="Left" Margin="266,11,0,0" VerticalAlignment="Top" Foreground="White" Width="95" Height="28"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="367,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <Button Content="Søg" HorizontalAlignment="Left" Margin="645,15,0,0" VerticalAlignment="Top" Width="66" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="367,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Text="{Binding søgefelt, Mode=OneWayToSource}"/>
+        <Button Content="Søg" HorizontalAlignment="Left" Margin="645,15,0,0" VerticalAlignment="Top" Width="66" Height="25" Command="{Binding SøgFunktion, Mode=OneWay}"/>
         <Button Content="Tank Op" HorizontalAlignment="Left" Margin="476,403,0,0" VerticalAlignment="Top" Width="109" Height="21" IsEnabled="False"/>
         <Grid HorizontalAlignment="Left" Height="401" Margin="26,23,0,0" VerticalAlignment="Top" Width="212" Background="#FFA41414">
             <Button Content="Opret" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="180" Command="{Binding TilføjBruger, Mode=OneWay}"/>
-            <PasswordBox HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Height="26" Width="180" Password="Koden" IsEnabled="False"/>
-            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,159,0,0" TextWrapping="Wrap" Text="Mobil" VerticalAlignment="Top" Width="180" IsEnabled="False"/>
-            <TextBox HorizontalAlignment="Left" Height="26" Margin="10,128,0,0" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="180"/>
-            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,98,0,0" TextWrapping="Wrap" Text="{Binding navn}" VerticalAlignment="Top" Width="180"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="52,189,0,0" VerticalAlignment="Top" Height="26" Width="138" Password="Koden" IsEnabled="False"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="52,159,0,0" TextWrapping="Wrap" Text="Mobil" VerticalAlignment="Top" Width="138" IsEnabled="False"/>
+            <TextBox HorizontalAlignment="Left" Height="26" Margin="52,128,0,0" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="138"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="52,98,0,0" TextWrapping="Wrap" Text="{Binding navn}" VerticalAlignment="Top" Width="138"/>
             <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Foreground="White" Width="180" Height="25" Background="#FFB92D1E"/>
-            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,220,0,0" TextWrapping="Wrap" Text="{Binding Saldo}" VerticalAlignment="Top" Width="180"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="52,220,0,0" TextWrapping="Wrap" Text="{Binding Saldo}" VerticalAlignment="Top" Width="138"/>
             <Label Content="{Binding status}" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Height="49" Width="180" FontSize="18"/>
+            <Label Content="Navn" HorizontalAlignment="Left" Margin="0,98,0,0" VerticalAlignment="Top"/>
+            <Label Content="Email" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top"/>
+            <Label Content="Saldo" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top"/>
         </Grid>
+        <ListView x:Name="KundeListeView" HorizontalAlignment="Left" Height="332" Margin="266,45,0,0" VerticalAlignment="Top" Width="445" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding ListeTilView}"/>
 
     </Grid>
 </Page>

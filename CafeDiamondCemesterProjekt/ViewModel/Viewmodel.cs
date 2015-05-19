@@ -11,6 +11,8 @@ using System.Xml.Linq;
 using CafeDiamondCemesterProjekt.Common;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using CafeDiamondCemesterProjekt.Model;
+using CafeDiamondCemesterProjekt.View;
 
 namespace CafeDiamondCemesterProjekt.ViewModel
 {
@@ -24,13 +26,64 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public string navn {get; set;}
         
         public string Email { get; set; }
-        public int Saldo { get; set; }
+        public string Saldo { get; set; }
         public string status { get; set; }
 
+        public string søgefelt { get; set; }
 
+        public List<Kunde> ListeTilView { get; set; }
 
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
         public ICommand TilføjBruger { get { RelayCommand _relay = new RelayCommand(TilfBruger); return _relay; } }
+
+        public ICommand SøgFunktion { get { RelayCommand _relay = new RelayCommand(Søg); return _relay; } }
+
+        private void Søg()
+        {
+            
+            OnPropertyChanged("søgefelt");
+            
+
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string selectSql = "select KundeID, Navn, Email, Saldo from dbo.Kunde where Navn LIKE '%" + søgefelt+"%';";
+
+            SqlCommand command = new SqlCommand(selectSql, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<Kunde> KundeList = new List<Kunde>();
+            while (reader.Read()){ 
+            try
+            {
+                reader.Read();
+
+                int KundeID = reader.GetInt16(0);
+                string navn = reader.GetString(1);
+                string Email = reader.GetString(2);
+                string Saldo = reader.GetString(3);
+
+                KundeList.Add(new Kunde(KundeID, navn, navn, Saldo));
+
+            }
+            catch (Exception)
+            {
+
+            }
+            }
+
+                reader.Close();
+                connection.Close();
+            
+            
+
+            ListeTilView = KundeList;
+            OnPropertyChanged("ListeTilView");
+        }
 
         public void TilfBruger()
         {
