@@ -109,3 +109,5 @@ C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\o
 C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.g.resources
 C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.Properties.Resources.resources
 C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref

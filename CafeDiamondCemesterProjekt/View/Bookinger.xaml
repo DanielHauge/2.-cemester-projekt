@@ -1,8 +1,9 @@
-﻿<Page x:Class="CafeDiamondCemesterProjekt.View.Bookinger"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ViewModel="clr-namespace:CafeDiamondCemesterProjekt.ViewModel" x:Class="CafeDiamondCemesterProjekt.View.Bookinger" 
       mc:Ignorable="d" 
       d:DesignHeight="494" d:DesignWidth="745"
 	Title="Page1">
@@ -28,11 +29,14 @@
             </ListView.View>
         </ListView>
         <Grid HorizontalAlignment="Left" Height="479" VerticalAlignment="Top" Width="166" Background="#FF0A0301" Opacity="0.6" Margin="0,5,0,0">
+            <Grid.DataContext>
+                <ViewModel:Viewmodel/>
+            </Grid.DataContext>
             <Button HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="Button_Click" Foreground="#FF150101" Content="Tilføj Booking"/>
-            <Button Content="Tilføj" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="129" Height="33"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" Text="Kunde ID" VerticalAlignment="Top" Width="129"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" Text="Bord" VerticalAlignment="Top" Width="129"/>
-            <DatePicker HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="129"/>
+            <Button Content="Tilføj" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="129" Height="33" Command="{Binding TilføjBooking}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" Text="Kunde ID" VerticalAlignment="Top" Width="129" DataContext="{Binding KID}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" Text="Bord" VerticalAlignment="Top" Width="129" DataContext="{Binding bord}"/>
+            <DatePicker HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="129" DataContext="{Binding tid}"/>
         </Grid>
         <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="181,174,0,0" VerticalAlignment="Top" Width="174" Height="29"/>
         <Button Content="Vis Alle Kunder" HorizontalAlignment="Left" Margin="370,9,0,0" VerticalAlignment="Top" Width="365"/>
