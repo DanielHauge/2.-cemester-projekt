@@ -12,26 +12,29 @@
 
     <Grid>
 
-        <Calendar HorizontalAlignment="Left" Margin="533,10,0,0" VerticalAlignment="Top" Height="174" Width="217"/>
-        <ListView HorizontalAlignment="Left" Height="301" Margin="553,184,0,0" VerticalAlignment="Top" Width="180">
+        <Calendar HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Height="159" Width="204" Background="#FFF90000"/>
+        <ListView HorizontalAlignment="Left" Height="446" Margin="370,0,0,10" VerticalAlignment="Bottom" Width="365" Background="#FF011C95" Opacity="0.9">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Tilføj Booking" HorizontalAlignment="Left" Margin="45,89,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="Button_Click"/>
-        <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="411,91,0,0" VerticalAlignment="Top" Width="122" Height="34"/>
-        <Button Content="Tilføj" HorizontalAlignment="Left" Margin="45,31,0,0" VerticalAlignment="Top" Width="129" Height="33"/>
-        <ListView HorizontalAlignment="Left" Height="301" Margin="368,184,0,0" VerticalAlignment="Top" Width="180" SelectionChanged="ListView_SelectionChanged">
+        <ListView HorizontalAlignment="Left" Height="276" Margin="181,208,0,0" VerticalAlignment="Top" Width="174" SelectionChanged="ListView_SelectionChanged" Background="#FFDEC8C7">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,128,0,0" TextWrapping="Wrap" Text="Kunde ID" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,156,0,0" TextWrapping="Wrap" Text="Bord" VerticalAlignment="Top" Width="120"/>
-        <DatePicker HorizontalAlignment="Left" Margin="45,184,0,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="479" VerticalAlignment="Top" Width="166" Background="#FF0A0301" Opacity="0.6" Margin="0,5,0,0">
+            <Button HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="Button_Click" Foreground="#FF150101" Content="Tilføj Booking"/>
+            <Button Content="Tilføj" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="129" Height="33"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" Text="Kunde ID" VerticalAlignment="Top" Width="129"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" Text="Bord" VerticalAlignment="Top" Width="129"/>
+            <DatePicker HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="129"/>
+        </Grid>
+        <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="181,174,0,0" VerticalAlignment="Top" Width="174" Height="29"/>
+        <Button Content="Vis Alle Kunder" HorizontalAlignment="Left" Margin="370,9,0,0" VerticalAlignment="Top" Width="365"/>
     </Grid>
 </Page>

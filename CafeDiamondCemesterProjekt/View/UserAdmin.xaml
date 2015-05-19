@@ -6,16 +6,26 @@
       mc:Ignorable="d"
 	Title="UserAdmin" Height="456" Width="738">
 
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="51,98,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" Width="140"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="51,194,0,0" TextWrapping="Wrap" Text="Mobil" VerticalAlignment="Top" Width="140"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="51,142,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="140"/>
-        <DataGrid HorizontalAlignment="Left" Margin="357,98,0,0" VerticalAlignment="Top" Height="309" Width="354"/>
-        <Button Content="Rediger" HorizontalAlignment="Left" Margin="465,422,0,0" VerticalAlignment="Top" Width="166"/>
-        <Button Content="Slet" HorizontalAlignment="Left" Margin="636,422,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="51,57,0,0" VerticalAlignment="Top" Foreground="White" Width="97"/>
-        <Label Content="Søg Bruger :" HorizontalAlignment="Left" Margin="357,57,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="437,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274"/>
+    <Grid Margin="0,10,0,-10">
+        <Grid.Background>
+            <ImageBrush ImageSource="/CafeDiamondCemesterProjekt;component/Assets/background1.png"/>
+        </Grid.Background>
+        <DataGrid HorizontalAlignment="Left" Margin="266,55,0,0" VerticalAlignment="Top" Height="332" Width="445"/>
+        <Button Content="Rediger" HorizontalAlignment="Left" Margin="266,403,0,0" VerticalAlignment="Top" Width="186" Height="21"/>
+        <Button Content="Slet" HorizontalAlignment="Left" Margin="607,403,0,0" VerticalAlignment="Top" Width="104" Height="21"/>
+        <Label Content="Søg Bruger :" HorizontalAlignment="Left" Margin="266,11,0,0" VerticalAlignment="Top" Foreground="White" Width="95" Height="28"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="367,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
+        <Button Content="Søg" HorizontalAlignment="Left" Margin="645,15,0,0" VerticalAlignment="Top" Width="66" Height="25"/>
+        <Button Content="Tank Op" HorizontalAlignment="Left" Margin="476,403,0,0" VerticalAlignment="Top" Width="109" Height="21"/>
+        <Grid HorizontalAlignment="Left" Height="401" Margin="26,23,0,0" VerticalAlignment="Top" Width="212" Background="#FFA41414">
+            <Button Content="Opret" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="180"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Height="26" Width="180" Password="Koden"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,159,0,0" TextWrapping="Wrap" Text="Mobil" VerticalAlignment="Top" Width="180"/>
+            <TextBox HorizontalAlignment="Left" Height="26" Margin="10,128,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="180"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,98,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" Width="180"/>
+            <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Foreground="White" Width="180" Height="25" Background="#FFB92D1E"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="10,220,0,0" TextWrapping="Wrap" Text="Fyld Saldo" VerticalAlignment="Top" Width="180"/>
+        </Grid>
 
     </Grid>
 </Page>
