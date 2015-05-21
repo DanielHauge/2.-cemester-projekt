@@ -43,12 +43,11 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             
             OnPropertyChanged("søgefelt");
             
-
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string selectSql = "select KundeID, Navn, Email, Saldo from dbo.Kunde where Navn LIKE '%" + søgefelt+"%';";
+            string selectSql = "select KundeID, Navn, Email, Saldo from dbo.Kunde where Navn LIKE '" + søgefelt + "';";
 
             SqlCommand command = new SqlCommand(selectSql, connection);
 
