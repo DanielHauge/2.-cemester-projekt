@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using CafeDiamondCemesterProjekt.Model;
 using CafeDiamondCemesterProjekt.View;
+using System.Windows;
 
 namespace CafeDiamondCemesterProjekt.ViewModel
 {
@@ -24,9 +25,12 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public int KID { get; set; }
 
         public string navn {get; set;}
-        
         public string Email { get; set; }
+        public string Mobil { get; set; }
+        public string password { get; set; }
         public string Saldo { get; set; }
+
+
         public string status { get; set; }
 
         public string søgefelt { get; set; }
@@ -42,12 +46,12 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         {
             
             OnPropertyChanged("søgefelt");
-            
+            Debug.WriteLine(søgefelt);
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string selectSql = "select KundeID, Navn, Email, Saldo from dbo.Kunde where Navn LIKE '" + søgefelt + "';";
+            string selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where Navn LIKE '%" + søgefelt+ "%'");
 
             SqlCommand command = new SqlCommand(selectSql, connection);
 
@@ -57,28 +61,21 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
             List<Kunde> KundeList = new List<Kunde>();
             while (reader.Read()){ 
-            try
-            {
-                reader.Read();
 
                 int KundeID = reader.GetInt16(0);
                 string navn = reader.GetString(1);
                 string Email = reader.GetString(2);
-                string Saldo = reader.GetString(3);
+                int Saldo = reader.GetInt32(3);
+                string Mobil = reader.GetString(4);
+                string password = reader.GetString(5);
 
-                KundeList.Add(new Kunde(KundeID, navn, navn, Saldo));
+                KundeList.Add(new Kunde(KundeID, navn, navn, Saldo, Mobil, password));
 
-            }
-            catch (Exception)
-            {
-
-            }
+                reader.Read();
             }
 
                 reader.Close();
                 connection.Close();
-            
-            
 
             ListeTilView = KundeList;
             OnPropertyChanged("ListeTilView");
@@ -90,28 +87,29 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             OnPropertyChanged("navn");
             OnPropertyChanged("Email");
             OnPropertyChanged("Saldo");
-            Debug.WriteLine(navn);
-            Debug.WriteLine(Email);
-            Debug.WriteLine(Saldo);
+            OnPropertyChanged("password");
+            OnPropertyChanged("Mobil");
+
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string insertSql = "insert into dbo.Kunde (Navn, Email, Saldo) values ('" +
-                                  navn + "','" + Email + "','" + Saldo + "')";
+            string insertSql = "insert into dbo.Kunde (Navn, Email, Saldo, Mobil, Password) values ('" +
+                                  navn + "','" + Email + "','" + Saldo + "','" + Mobil + "','" + password + "')";
 
             SqlCommand command = new SqlCommand(insertSql, connection);
             connection.Open();
 
-            try
-            {
+            try{
                 command.ExecuteNonQuery();
                 status = "Kunde oprettet";
+                MessageBoxResult res = MessageBox.Show("Bruger oprettet");
                 OnPropertyChanged("status");
             }
             catch (Exception)
             {
-                status = "Der opstod en fejl";
+                MessageBoxResult res = MessageBox.Show("Fejl\nFejlen kan være opstået af flere årsager\n For at undgå fejlen forsøg at følge nedenstående\nAnvend kun heltal i Saldo\nAnvend kun 10 eller mindre tegn i mobilnummer");
+                status = "Fejl opstået";
                 OnPropertyChanged("status");
             }
             //NEW BOOKING ADDED
