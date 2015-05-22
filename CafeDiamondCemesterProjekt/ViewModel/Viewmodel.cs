@@ -32,14 +32,43 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
 
         public string status { get; set; }
-
+        public string TjekVar { get; set; }
         public string søgefelt { get; set; }
 
         public List<Kunde> ListeTilView { get; set; }
 
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
         public ICommand TilføjBruger { get { RelayCommand _relay = new RelayCommand(TilfBruger); return _relay; } }
+        public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
 
+        private void Tjek()
+        {
+            OnPropertyChanged("TjekVar");
+
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where Mobil LIKE '" + TjekVar + "'");
+
+            SqlCommand command = new SqlCommand(selectSql, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+                MessageBoxResult res = MessageBox.Show("Bruger fundet");
+            }else
+            {
+                MessageBoxResult res = MessageBox.Show("Kunde ikke finde bruger");
+            }
+
+            reader.Close();
+            connection.Close();
+        }
         public ICommand SøgFunktion { get { RelayCommand _relay = new RelayCommand(Søg); return _relay; } }
 
         private void Søg()
@@ -143,7 +172,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             }
             catch (Exception)
             {
-                
+                MessageBoxResult res = MessageBox.Show("Fejl");
             }
             //NEW BOOKING ADDED
             connection.Close();

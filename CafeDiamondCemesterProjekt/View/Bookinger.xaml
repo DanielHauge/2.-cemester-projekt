@@ -32,8 +32,8 @@
             <Grid.DataContext>
                 <ViewModel:Viewmodel/>
             </Grid.DataContext>
-            <Button HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="Button_Click" Foreground="#FF150101" Content="Tilføj Booking"/>
-            <Button Content="Tilføj" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="129" Height="33" Command="{Binding TilføjBooking}"/>
+            <Button HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="Button_Click" Foreground="#FF150101" Content="Tilføj Booking" Command="{Binding TilføjBooking, Mode=OneWay}"/>
+            <Button Content="Tjek Kunde" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="129" Height="33"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" Text="Kunde ID" VerticalAlignment="Top" Width="129"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" Text="Bord" VerticalAlignment="Top" Width="129"/>
             <DatePicker HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="129"/>
