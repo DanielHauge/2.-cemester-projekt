@@ -263,6 +263,8 @@
     <Resource Include="Assets\hookafh.jpg" />
     <Resource Include="Assets\button.png" />
     <Resource Include="Assets\background1.png" />
+    <Resource Include="Assets\Grey-background.png" />
+    <Resource Include="Assets\Button2.jpg" />
     <Content Include="DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
