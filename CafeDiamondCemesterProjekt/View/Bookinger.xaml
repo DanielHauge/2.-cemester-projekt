@@ -7,14 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="494" d:DesignWidth="745"
 	Title="Page1">
-    <Page.Background>
-        <ImageBrush ImageSource="/CafeDiamondCemesterProjekt;component/Assets/background1.png"/>
-    </Page.Background>
-
     <Grid>
 
-        <Calendar HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Height="159" Width="204" Background="#FFF90000"/>
-        <ListView HorizontalAlignment="Left" Height="446" Margin="370,0,0,10" VerticalAlignment="Bottom" Width="365" Background="#FF011C95" Opacity="0.9">
+        <Calendar HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Height="159" Width="204"/>
+        <ListView HorizontalAlignment="Left" Height="397" Margin="370,0,0,59" VerticalAlignment="Bottom" Width="365" Background="#FF011C95" Opacity="0.9">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

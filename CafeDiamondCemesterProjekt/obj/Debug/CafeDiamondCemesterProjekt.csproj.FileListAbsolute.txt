@@ -111,3 +111,35 @@ C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\o
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.config
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.exe
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.pdb
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\DB.mdf
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\DB\DB.mdf
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\DB\DB_log.ldf
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\DB_log.ldf
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.pdb
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.dll
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.xml
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\MainWindow.baml
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\ProdukterEvents.baml
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\MainWindow.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\Bookinger.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\ProdukterEvents.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\UserAdmin.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\App.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_Content.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.cache
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\Bookinger.baml
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\UserAdmin.baml
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.g.resources
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.Properties.Resources.resources
+C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csproj.GenerateResource.Cache
+C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref
