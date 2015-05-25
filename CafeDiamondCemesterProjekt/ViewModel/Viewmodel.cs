@@ -14,6 +14,7 @@ using System.Diagnostics;
 using CafeDiamondCemesterProjekt.Model;
 using CafeDiamondCemesterProjekt.View;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace CafeDiamondCemesterProjekt.ViewModel
 {
@@ -23,24 +24,158 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public DateTime tid { get; set; }
         public int bord { get; set; }
         public int KID { get; set; }
-
         public string navn {get; set;}
         public string Email { get; set; }
+        public string ListView { get; set; }
         public string Mobil { get; set; }
         public string password { get; set; }
         public string Saldo { get; set; }
 
-
+        public bool Update = false;
         public string status { get; set; }
         public string TjekVar { get; set; }
         public string søgefelt { get; set; }
 
+        public int RedigVar { get; set; }
+
         public List<Kunde> ListeTilView { get; set; }
 
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
-        public ICommand TilføjBruger { get { RelayCommand _relay = new RelayCommand(TilfBruger); return _relay; } }
-        public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
+        private void TilfBooking()
+        {
+            OnPropertyChanged("tid");
+            OnPropertyChanged("bord");
+            OnPropertyChanged("KID");
 
+
+            var tidd = tid.ToLongDateString();
+
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB.mdf';Integrated Security=True";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string insertSql = "insert into dbo.Booking (Bord, KundeID, Dato) values ('" +
+                                  bord + "','" + KID + "','" + tidd + "')";
+
+            SqlCommand command = new SqlCommand(insertSql, connection);
+            connection.Open();
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                MessageBoxResult res = MessageBox.Show("Fejl");
+            }
+            //NEW BOOKING ADDED
+            connection.Close();
+        }
+        public ICommand TilføjBruger { get { RelayCommand _relay = new RelayCommand(TilfBruger); return _relay; } }
+        public void TilfBruger()
+        {
+
+            OnPropertyChanged("navn");
+            OnPropertyChanged("Email");
+            OnPropertyChanged("Saldo");
+            OnPropertyChanged("password");
+            OnPropertyChanged("Mobil");
+
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string insertSql;
+            if (!Update)
+            {
+                insertSql = "insert into dbo.Kunde (Navn, Email, Saldo, Mobil, Password) values ('" +
+                                      navn + "','" + Email + "','" + Saldo + "','" + Mobil + "','" + password + "')";
+            }
+            else
+            {
+                Update = false;
+                insertSql = "UPDATE dbo.Kunde SET Navn=" + navn + ", Email=" + Email + ", Saldo=" + Saldo + ", Mobil=" + Mobil + ", Password=" + password + " WHERE KundeID=" + RedigVar + "";
+                MessageBoxResult res = MessageBox.Show("Redigering er fuldført.");
+                status = "Redigeret!";
+                OnPropertyChanged("status");
+            }
+
+
+
+            SqlCommand command = new SqlCommand(insertSql, connection);
+            connection.Open();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                status = "Kunde oprettet";
+                MessageBoxResult res = MessageBox.Show("Bruger oprettet");
+                OnPropertyChanged("status");
+            }
+            catch (Exception)
+            {
+                MessageBoxResult res = MessageBox.Show("Fejl\nFejlen kan være opstået af flere årsager\n For at undgå fejlen forsøg at følge nedenstående\nAnvend kun heltal i Saldo\nAnvend kun 10 eller mindre tegn i mobilnummer");
+                status = "Fejl opstået";
+                OnPropertyChanged("status");
+            }
+            //NEW BOOKING ADDED
+            connection.Close();
+
+        }
+        public ICommand RedigerKunde { get { RelayCommand _relay = new RelayCommand(Rediger); return _relay; } }
+        private void Rediger()
+        {
+            Update = true;
+            //Splitting shit
+            string str = ListView.Remove(0, 9);
+            string result = "";
+            for (int i = 0; i < str.Length; i++) // loop over the complete input
+            {
+                if (Char.IsDigit(str[i])) //check if the current char is digit
+                    result += str[i];
+                else
+                    break; //Stop the loop after the first character
+            }
+            RedigVar = Int16.Parse(result);
+            if (RedigVar > 0)
+            {
+                MessageBoxResult res = MessageBox.Show("Redigering kan foretages nu!");
+                status = "Redigering kan nu foretages.";
+                OnPropertyChanged("status");
+            }
+
+        }
+        public ICommand SletKunde { get { RelayCommand _relay = new RelayCommand(Slet); return _relay; } }
+        private void Slet()
+        {
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+                string insertSql = "DELETE FROM dbo.Kunde WHERE KundeID=" + RedigVar + "";
+
+
+
+
+            SqlCommand command = new SqlCommand(insertSql, connection);
+            connection.Open();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                status = "Bruger slettet";
+                MessageBoxResult res = MessageBox.Show("Bruger Slettet");
+                OnPropertyChanged("status");
+            }
+            catch (Exception)
+            {
+                MessageBoxResult res = MessageBox.Show("Der skete en fejl");
+            }
+            //NEW BOOKING ADDED
+            connection.Close();
+        }
+        public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
         private void Tjek()
         {
             OnPropertyChanged("TjekVar");
@@ -70,7 +205,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             connection.Close();
         }
         public ICommand SøgFunktion { get { RelayCommand _relay = new RelayCommand(Søg); return _relay; } }
-
         private void Søg()
         {
             
@@ -108,74 +242,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
             ListeTilView = KundeList;
             OnPropertyChanged("ListeTilView");
-        }
-
-        public void TilfBruger()
-        {
-            
-            OnPropertyChanged("navn");
-            OnPropertyChanged("Email");
-            OnPropertyChanged("Saldo");
-            OnPropertyChanged("password");
-            OnPropertyChanged("Mobil");
-
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            string insertSql = "insert into dbo.Kunde (Navn, Email, Saldo, Mobil, Password) values ('" +
-                                  navn + "','" + Email + "','" + Saldo + "','" + Mobil + "','" + password + "')";
-
-            SqlCommand command = new SqlCommand(insertSql, connection);
-            connection.Open();
-
-            try{
-                command.ExecuteNonQuery();
-                status = "Kunde oprettet";
-                MessageBoxResult res = MessageBox.Show("Bruger oprettet");
-                OnPropertyChanged("status");
-            }
-            catch (Exception)
-            {
-                MessageBoxResult res = MessageBox.Show("Fejl\nFejlen kan være opstået af flere årsager\n For at undgå fejlen forsøg at følge nedenstående\nAnvend kun heltal i Saldo\nAnvend kun 10 eller mindre tegn i mobilnummer");
-                status = "Fejl opstået";
-                OnPropertyChanged("status");
-            }
-            //NEW BOOKING ADDED
-            connection.Close();
-        
-        }
-
-        private void TilfBooking()
-        {
-            OnPropertyChanged("tid");
-            OnPropertyChanged("bord");
-            OnPropertyChanged("KID");
-            
-
-            var tidd = tid.ToLongDateString();
-
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB.mdf';Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            string insertSql = "insert into dbo.Booking (Bord, KundeID, Dato) values ('" +
-                                  bord + "','" + KID + "','" + tidd + "')";
-
-            SqlCommand command = new SqlCommand(insertSql, connection);
-            connection.Open();
-
-
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                MessageBoxResult res = MessageBox.Show("Fejl");
-            }
-            //NEW BOOKING ADDED
-            connection.Close();
         }
 
 
