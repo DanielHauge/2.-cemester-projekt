@@ -65,7 +65,6 @@ C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterP
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.xml
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\MainWindow.baml
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\Bookinger.baml
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\View\ProdukterEvents.baml
@@ -143,3 +142,4 @@ C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj
 C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csproj.GenerateResource.Cache
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref
+C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
