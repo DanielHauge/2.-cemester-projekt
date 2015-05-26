@@ -21,9 +21,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
     class Viewmodel : INotifyPropertyChanged
     {
 
-        public DateTime tid { get; set; }
-        public int bord { get; set; }
-        public int KID { get; set; }
+
         public string navn {get; set;}
         public string Email { get; set; }
         public string ListView { get; set; }
@@ -40,38 +38,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
         public List<Kunde> ListeTilView { get; set; }
 
-        public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
-        private void TilfBooking()
-        {
-            OnPropertyChanged("tid");
-            OnPropertyChanged("bord");
-            OnPropertyChanged("KID");
-
-
-            var tidd = tid.ToLongDateString();
-
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB.mdf';Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            string insertSql = "insert into dbo.Booking (Bord, KundeID, Dato) values ('" +
-                                  bord + "','" + KID + "','" + tidd + "')";
-
-            SqlCommand command = new SqlCommand(insertSql, connection);
-            connection.Open();
-
-
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                MessageBoxResult res = MessageBox.Show("Fejl");
-            }
-            //NEW BOOKING ADDED
-            connection.Close();
-        }
         public ICommand TilføjBruger { get { RelayCommand _relay = new RelayCommand(TilfBruger); return _relay; } }
         public void TilfBruger()
         {
