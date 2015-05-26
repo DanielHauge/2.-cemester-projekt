@@ -142,3 +142,4 @@ C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj
 C:\Users\Turkmen\Desktop\TEST\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csproj.GenerateResource.Cache
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref
+C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
