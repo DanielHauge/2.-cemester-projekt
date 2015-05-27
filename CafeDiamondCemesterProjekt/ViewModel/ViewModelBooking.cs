@@ -20,12 +20,45 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 {
     class ViewModelBooking : INotifyPropertyChanged
     {
-        public DateTime tid { get; set; }
-        public int bord { get; set; }
-        public int KID { get; set; }
+        public string BMobil { get; set; }
+        public int Bbord { get; set; }
+        public string Bdato { get; set; }
+        public string TjekVar { get; set; }
+        public int KIDread { get; set; }
+
+        public string bookingViewDato { get; set; }
+
+        public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
+        private void Tjek()
+        {
+            OnPropertyChanged("TjekVar");
+
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where Mobil LIKE '" + TjekVar + "'");
+
+            SqlCommand command = new SqlCommand(selectSql, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
 
 
+            if (reader.Read())
+            {
+                MessageBoxResult res = MessageBox.Show("Bruger fundet");
+                KIDread = reader.GetInt16(0);
+            }
+            else
+            {
+                MessageBoxResult res = MessageBox.Show("Kunde ikke finde bruger");
+            }
 
+            reader.Close();
+            connection.Close();
+        }
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
         private void TilfBooking()
         {
@@ -35,20 +68,20 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
 
 
-            var tidd = tid.ToLongDateString();
+            // Find KID på kunde ved tjek Kunde
 
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB.mdf';Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
             string insertSql = "insert into dbo.Booking (Bord, KundeID, Dato) values ('" +
-               bord + "','" + KID + "','" + tidd + "')";
+               Bbord + "','" + KIDread + "','" + Bdato + "')";
 
             SqlCommand command = new SqlCommand(insertSql, connection);
             connection.Open();
 
 
-            try
+           try
             {
                 command.ExecuteNonQuery();
             }
@@ -56,7 +89,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             {
                 MessageBoxResult res = MessageBox.Show("Fejl");
             }
-            //NEW BOOKING ADDED
+           
             connection.Close();
         }
 
