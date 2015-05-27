@@ -4,26 +4,13 @@
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Height="786" Width="1366" WindowState="Maximized">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Assets/Grey-background.png" Stretch="Fill"/>
+            <ImageBrush ImageSource="Assets/shisha_by_villagerCZ.png" Stretch="Fill"/>
         </Grid.Background>
-        <Button Content="Booking" HorizontalAlignment="Left" Margin="27,195,0,0" VerticalAlignment="Top" Width="184" Height="37" Foreground="#FF040404" Click="Button_Click" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Button2.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button Content="User Admin" HorizontalAlignment="Left" Margin="27,269,0,0" VerticalAlignment="Top" Width="184" Height="36" Foreground="Black" Click="Button_Click_2" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Button2.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="27,340,0,0" VerticalAlignment="Top" Width="184" Height="34" Foreground="Black" Click="Button_Click_1" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Button2.jpg"/>
-            </Button.Background>
-        </Button>
+        <Button Content="Booking" HorizontalAlignment="Left" Margin="27,227,0,0" VerticalAlignment="Top" Width="184" Height="37" Foreground="#FF040404" Click="Button_Click" FontSize="14" FontWeight="Bold" Background="#FF5995FD"/>
+        <Button Content="User Admin" HorizontalAlignment="Left" Margin="27,299,0,0" VerticalAlignment="Top" Width="184" Height="36" Foreground="Black" Click="Button_Click_2" FontSize="14" FontWeight="Bold" Background="#FF5995FD"/>
+        <Button Content="Produkter/Events" HorizontalAlignment="Left" Margin="27,368,0,0" VerticalAlignment="Top" Width="184" Height="34" Foreground="Black" Click="Button_Click_1" FontSize="14" FontWeight="Bold" Background="#FF5995FD"/>
         <Frame x:Name="DenneFrame" HorizontalAlignment="Left" Height="541" Margin="216,81,0,0" VerticalAlignment="Top" Width="912" NavigationUIVisibility="Hidden"/>
-        <TextBlock HorizontalAlignment="Left" Height="98.67" Margin="27,646.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506.5" FontSize="86.667" FontFamily="Vivaldi" Foreground="Black" FontWeight="Bold"><Run Text="Café Diamond"/><Run Text="   "/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="79.33" Margin="533.5,666.18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="439.5" FontFamily="Vivaldi" FontSize="48"><Run Foreground="Black" FontSize="64" Text="-"/><Run Foreground="Black" Text=" "/><Run Foreground="Black" Text="Book "/><Run Foreground="Black" Text="én "/><Run Foreground="Black" Text="Oplevelse"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="99" Margin="27,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="675" FontSize="86.667" FontFamily="Vivaldi" Foreground="#FFCB8D8D" FontWeight="Bold" Text="Book en Oplevelse"/>
     </Grid>
 </Window>
 
