@@ -28,10 +28,11 @@
             <Button Content="Tjek Kunde" HorizontalAlignment="Left" Margin="15,38,0,0" VerticalAlignment="Top" Width="186" Height="33" Command="{Binding TjekKunde, Mode=OneWay}"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" Text="{Binding BMobil}" VerticalAlignment="Top" Width="129"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="72,76,0,0" TextWrapping="Wrap" Text="{Binding Bbord}" VerticalAlignment="Top" Width="129"/>
-            <DatePicker HorizontalAlignment="Left" Margin="72,102,0,0" VerticalAlignment="Top" Width="129" SelectedDateFormat="{Binding Bdato}"/>
+            <DatePicker HorizontalAlignment="Left" Margin="72,102,0,0" VerticalAlignment="Top" Width="129" Text="{Binding Bdato}" DisplayDate="{Binding Bdato, Mode=OneWayToSource}"/>
             <Label Content="Mobil" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
             <Label Content="Bord" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
             <Label Content="Dato" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
+            <Label Content="Dato" HorizontalAlignment="Left" Margin="15,170,0,0" VerticalAlignment="Top" Width="181" Background="Black" Foreground="White" Height="190"/>
         </Grid>
         <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="211,174,0,0" VerticalAlignment="Top" Width="188" Height="29"/>
         <ListView HorizontalAlignment="Left" Height="276" Margin="211,208,0,0" VerticalAlignment="Top" Width="524" SelectionChanged="ListView_SelectionChanged" Background="#FFDEC8C7">
