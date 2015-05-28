@@ -25,7 +25,7 @@
             <Label Content="Mobil" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
             <Label Content="Bord" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
             <Label Content="Dato" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
-            <Label Content="Dato" HorizontalAlignment="Left" Margin="15,170,0,0" VerticalAlignment="Top" Width="181" Background="Black" Foreground="White" Height="190"/>
+            <Label Content="{Binding Bstatus}" HorizontalAlignment="Left" Margin="15,170,0,0" VerticalAlignment="Top" Width="181" Background="Black" Foreground="White" Height="190"/>
         </Grid>
         <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="216,10,0,0" VerticalAlignment="Top" Width="178" Height="29"/>
 
