@@ -12,9 +12,14 @@ DEBUG;TRACE
 C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\App.xaml
 41386158193
 41943705865
+<<<<<<< HEAD
 351801652257
 17-834034579
+=======
+361754820222
+17564233230
+>>>>>>> origin/master
 MainWindow.xaml;View\Bookinger.xaml;View\ProdukterEvents.xaml;View\UserAdmin.xaml;
 
-False
+True
 
