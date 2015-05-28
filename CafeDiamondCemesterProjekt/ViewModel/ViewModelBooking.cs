@@ -26,9 +26,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public string TjekVar { get; set; }
         public int KIDread { get; set; }
         public string Bstatus { get; set; }
-        public DateTime bookingViewDato { get; set; }
-        public List<Booking> BookingTilView { get; set; }
-        public List<Booking> BookingTilView2 { get; set; }
+        public string bookingViewDato { get; set; }
 
         public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
         private void Tjek()
@@ -96,87 +94,8 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             connection.Close();
             KIDread = 0;
         }
-        public ICommand FyldListen { get { RelayCommand _relay = new RelayCommand(FyldListe); return _relay; } }
-        public void FyldListe()
-        {
-            Debug.Write("TRYK");
-            OnPropertyChanged("BookingTilView");
-            OnPropertyChanged("BookingTilView2");
-            OnPropertyChanged("BookingViewDato");
-            DagsListe();
-            SpecifikDag();
-            OnPropertyChanged("BookingTilView");
-            OnPropertyChanged("BookingTilView2");
-        }
 
-        private void SpecifikDag()
-        {
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
-            OnPropertyChanged("bookingViewDato");
-            SqlConnection connection = new SqlConnection(connectionString);
-            string Specdato = bookingViewDato.ToShortDateString();
-            Debug.Write(Specdato);
-            string selectSql = ("select BID, bord, dato, KID from dbo.Book where dato LIKE '" + Specdato + "%'");
 
-            SqlCommand command = new SqlCommand(selectSql, connection);
-
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<Booking> BookingList = new List<Booking>();
-            while (reader.Read())
-            {
-
-                int BID = reader.GetInt16(0);
-                int bord = reader.GetInt32(1);
-                string dato = reader.GetString(2);
-                int KID = reader.GetInt32(3);
-
-                BookingList.Add(new Booking(BID, bord, dato, KID));
-
-                reader.Read();
-            }
-            
-            reader.Close();
-            connection.Close();
-            BookingTilView2 = BookingList;
-            OnPropertyChanged("BookingTilView2");
-        }
-
-        private void DagsListe()
-        {
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectionString);
-            string idagdato = DateTime.Today.ToShortDateString();
-            string selectSql = ("select BID, bord, dato, KID from dbo.Book where dato LIKE '" + idagdato + "%'");
-
-            SqlCommand command = new SqlCommand(selectSql, connection);
-
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<Booking> BookingList = new List<Booking>();
-            while (reader.Read())
-            {
-
-                int BID = reader.GetInt16(0);
-                int bord = reader.GetInt32(1);
-                string dato = reader.GetString(2);
-                int KID = reader.GetInt32(3);
-
-                BookingList.Add(new Booking(BID, bord, dato, KID));
-
-                reader.Read();
-            }
-            
-            reader.Close();
-            connection.Close();
-            BookingTilView = BookingList;
-            OnPropertyChanged("BookingTilView");
-        }
 
         #region propertychanged
         public event PropertyChangedEventHandler PropertyChanged;

@@ -116,7 +116,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         private void Slet()
         {
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
-            OnPropertyChanged("RedigVar");
+
             SqlConnection connection = new SqlConnection(connectionString);
 
                 string insertSql = "DELETE FROM dbo.Kunde WHERE KundeID=" + RedigVar + "";
