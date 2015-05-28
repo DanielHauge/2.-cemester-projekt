@@ -165,7 +165,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
                 int BID = reader.GetInt16(0);
                 int bord = reader.GetInt32(1);
                 string dato = reader.GetString(2);
-                int KID = reader.GetInt32(3);
+                int KID = reader.GetInt16(3);
 
                 BookingList.Add(new Booking(BID, bord, dato, KID));
 
