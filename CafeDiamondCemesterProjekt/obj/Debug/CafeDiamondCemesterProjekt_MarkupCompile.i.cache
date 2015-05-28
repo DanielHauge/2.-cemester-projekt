@@ -4,16 +4,33 @@
 winexe
 C#
 .cs
-C:\Users\Daniel\Desktop\2.-cemester-projekt-baea06a48c76d54688b86c09ace98a94bdf4dcbf\CafeDiamondCemesterProjekt\obj\Debug\
+<<<<<<< HEAD
+C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\
+=======
+C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\
+>>>>>>> origin/master
 CafeDiamondCemesterProjekt
 none
 false
 DEBUG;TRACE
-C:\Users\Daniel\Desktop\2.-cemester-projekt-baea06a48c76d54688b86c09ace98a94bdf4dcbf\CafeDiamondCemesterProjekt\App.xaml
+<<<<<<< HEAD
+C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterProjekt\App.xaml
 41386158193
 41943705865
-35142007789
-17-947120724
+351478478983
+172042589618
+=======
+C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\App.xaml
+41386158193
+41943705865
+<<<<<<< HEAD
+351801652257
+17-834034579
+=======
+361754820222
+17564233230
+>>>>>>> origin/master
+>>>>>>> origin/master
 MainWindow.xaml;View\Bookinger.xaml;View\ProdukterEvents.xaml;View\UserAdmin.xaml;
 
 True
