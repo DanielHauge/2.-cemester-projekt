@@ -26,7 +26,7 @@ namespace CafeDiamondCemesterProjekt.Model
 
         public override string ToString()
         {
-            return string.Format("KundeID: {0}, Bord: {1}, Dato: {2}", kid, bord, dato);
+            return string.Format("ID: {0}, KundeID: {1}, Bord: {2}, Dato: {3}", bid, kid, bord, dato);
         }
     }
 }

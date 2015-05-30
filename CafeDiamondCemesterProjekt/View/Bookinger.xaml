@@ -27,11 +27,11 @@
             <Label Content="Dato" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="52" Background="Black" Foreground="White"/>
             <Label Content="{Binding Bstatus}" HorizontalAlignment="Left" Margin="15,170,0,0" VerticalAlignment="Top" Width="181" Background="Black" Foreground="White" Height="190"/>
         </Grid>
-        <Button Content="Rediger Booking" HorizontalAlignment="Left" Margin="216,10,0,0" VerticalAlignment="Top" Width="178" Height="29"/>
+        <Button Content="Slet Booking" HorizontalAlignment="Left" Margin="216,10,0,0" VerticalAlignment="Top" Width="178" Height="29" Command="{Binding SletBooking, Mode=OneWay}"/>
 
         <Button Content="Updater" HorizontalAlignment="Left" Margin="216,205,0,0" VerticalAlignment="Top" Width="178" Height="29" Command="{Binding FyldListen, Mode=OneWay}"/>
         <ListView HorizontalAlignment="Left" Height="245" Margin="216,239,0,0" VerticalAlignment="Top" Width="519" IsEnabled="False" ItemsSource="{Binding BookingTilView}"/>
-        <ListView HorizontalAlignment="Left" Height="224" VerticalAlignment="Top" Width="336" ItemsSource="{Binding BookingTilView2}" IsEnabled="False" Margin="399,10,0,0"/>
+        <ListView HorizontalAlignment="Left" Height="224" VerticalAlignment="Top" Width="336" ItemsSource="{Binding BookingTilView2}" Margin="399,10,0,0" SelectedValue="{Binding LView}"/>
 
 
     </Grid>

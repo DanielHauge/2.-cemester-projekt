@@ -60,24 +60,31 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             }
             else
             {
-                Update = false;
-                insertSql = "UPDATE dbo.Kunde SET Navn=" + navn + ", Email=" + Email + ", Saldo=" + Saldo + ", Mobil=" + Mobil + ", Password=" + password + " WHERE KundeID=" + RedigVar + "";
-                MessageBoxResult res = MessageBox.Show("Redigering er fuldført.");
-                status = "Redigeret!";
-                OnPropertyChanged("status");
+                
+                insertSql = "UPDATE dbo.Kunde SET Navn='" + navn + "', Email='" + Email + "', Saldo='" + Saldo + "', Mobil='" + Mobil + "', Password='" + password + "' WHERE KundeID='" + RedigVar + "';";
+                
             }
 
 
 
             SqlCommand command = new SqlCommand(insertSql, connection);
             connection.Open();
-
-            try
-            {
+            try{
                 command.ExecuteNonQuery();
-                status = "Kunde oprettet";
-                MessageBoxResult res = MessageBox.Show("Bruger oprettet");
-                OnPropertyChanged("status");
+                if (Update)
+                {
+                    MessageBoxResult res = MessageBox.Show("Redigering er fuldført.");
+                    status = "Redigeret!";
+                    OnPropertyChanged("status");
+                    Update = false;
+                }
+                else
+                {
+                    status = "Kunde oprettet";
+                    MessageBoxResult ss = MessageBox.Show("Bruger oprettet");
+                    OnPropertyChanged("status");
+                }
+                
             }
             catch (Exception)
             {
@@ -94,16 +101,8 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         {
             Update = true;
             //Splitting shit
-            string str = ListView.Remove(0, 9);
-            string result = "";
-            for (int i = 0; i < str.Length; i++) // loop over the complete input
-            {
-                if (Char.IsDigit(str[i])) //check if the current char is digit
-                    result += str[i];
-                else
-                    break; //Stop the loop after the first character
-            }
-            RedigVar = Int16.Parse(result);
+            FindRedigVar();
+            
             if (RedigVar > 0)
             {
                 MessageBoxResult res = MessageBox.Show("Redigering kan foretages nu!");
@@ -112,16 +111,38 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             }
 
         }
+
+        private void FindRedigVar()
+        {
+            try
+            {
+                string str = ListView.Remove(0, 9);
+                string result = "";
+                for (int i = 0; i < str.Length; i++) // loop over the complete input
+                {
+                    if (Char.IsDigit(str[i])) //check if the current char is digit
+                        result += str[i];
+                    else
+                        break; //Stop the loop after the first character
+                }
+                RedigVar = Int16.Parse(result);
+            }
+            catch
+            {
+                MessageBoxResult res = MessageBox.Show("Der skal være mærkeret en bruger");
+            }
+        }
         public ICommand SletKunde { get { RelayCommand _relay = new RelayCommand(Slet); return _relay; } }
         private void Slet()
         {
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
             OnPropertyChanged("RedigVar");
             SqlConnection connection = new SqlConnection(connectionString);
+                FindRedigVar();
 
-                string insertSql = "DELETE FROM dbo.Kunde WHERE KundeID=" + RedigVar + "";
+                string insertSql = "DELETE FROM dbo.Kunde WHERE KundeID='" + RedigVar + "'";
 
-
+                Debug.Write(RedigVar);
 
 
             SqlCommand command = new SqlCommand(insertSql, connection);
@@ -133,6 +154,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
                 status = "Bruger slettet";
                 MessageBoxResult res = MessageBox.Show("Bruger Slettet");
                 OnPropertyChanged("status");
+                Søg();
             }
             catch (Exception)
             {
@@ -147,7 +169,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         {
             
             OnPropertyChanged("søgefelt");
-            Debug.WriteLine(søgefelt);
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);

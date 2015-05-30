@@ -26,6 +26,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public string TjekVar { get; set; }
         public int KIDread { get; set; }
         public string Bstatus { get; set; }
+        public string LView { get; set; }
         public DateTime bookingViewDato { get; set; }
         public List<Booking> BookingTilView { get; set; }
         public List<Booking> BookingTilView2 { get; set; }
@@ -67,6 +68,58 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             reader.Close();
             connection.Close();
         }
+        public ICommand SletBooking { get { RelayCommand _relay = new RelayCommand(Slet); return _relay; } }
+
+        private void Slet()
+        {
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string result = "";
+            try
+            {
+                string str = LView.Remove(0, 4);
+                for (int i = 0; i < str.Length; i++) // loop over the complete input
+                {
+                    if (Char.IsDigit(str[i])) //check if the current char is digit
+                        result += str[i];
+                    else
+                        break; //Stop the loop after the first character
+                }
+                Debug.WriteLine(LView);
+                Debug.WriteLine(result);
+            }
+            catch
+            {
+                MessageBoxResult res = MessageBox.Show("Der skal være markeret en booking for at kunne slette");
+            }
+            
+            
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string insertSql = "DELETE FROM dbo.Book WHERE BID='" + result + "'";
+
+
+
+
+            SqlCommand command = new SqlCommand(insertSql, connection);
+            connection.Open();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                Bstatus = "Booking slettet";
+                MessageBoxResult ressss = MessageBox.Show("Booking Slettet");
+                OnPropertyChanged("status");
+                FyldListe();
+            }
+            catch (Exception)
+            {
+                MessageBoxResult res = MessageBox.Show("Der skete en fejl");
+            }
+            //NEW BOOKING ADDED
+            connection.Close();
+        }
+
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
         private void TilfBooking()
         {
