@@ -30,7 +30,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public DateTime bookingViewDato { get; set; }
         public List<Booking> BookingTilView { get; set; }
         public List<Booking> BookingTilView2 { get; set; }
-
         public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
         private void Tjek()
         {
@@ -69,7 +68,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             connection.Close();
         }
         public ICommand SletBooking { get { RelayCommand _relay = new RelayCommand(Slet); return _relay; } }
-
         private void Slet()
         {
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
@@ -119,7 +117,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             //NEW BOOKING ADDED
             connection.Close();
         }
-
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
         private void TilfBooking()
         {
@@ -166,7 +163,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             OnPropertyChanged("BookingTilView");
             OnPropertyChanged("BookingTilView2");
         }
-
         private void SpecifikDag()
         {
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
@@ -201,7 +197,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             BookingTilView2 = BookingList;
             OnPropertyChanged("BookingTilView2");
         }
-
         private void DagsListe()
         {
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";

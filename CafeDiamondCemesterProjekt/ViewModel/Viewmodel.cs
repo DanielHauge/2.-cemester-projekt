@@ -30,39 +30,74 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public string Saldo { get; set; }
 
         public bool Update = false;
+        public bool TankOp = false;
         public string status { get; set; }
-
+        public int NuvSaldo = 0;
         public string søgefelt { get; set; }
 
         public int RedigVar { get; set; }
 
         public List<Kunde> ListeTilView { get; set; }
 
+        public ICommand TankOpRelay { get { RelayCommand _relay = new RelayCommand(TankopFunktion); return _relay; } }
+
+        private void TankopFunktion()
+        {
+            FindRedigVar();
+            TankOp = true;
+            if (RedigVar > 0)
+            {
+                MessageBoxResult res = MessageBox.Show("Bruger fundet til TankOp");
+                status = "Tank Op, ret i Saldo og tryk Opret/Rediger.";
+                OnPropertyChanged("status");
+            }
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where KundeID LIKE '%" + RedigVar+ "%'");
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(selectSql, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                NuvSaldo = reader.GetInt32(3);
+                reader.Read();
+            }
+            reader.Close();
+            connection.Close();
+            Debug.WriteLine(NuvSaldo);
+
+        }
+
         public ICommand TilføjBruger { get { RelayCommand _relay = new RelayCommand(TilfBruger); return _relay; } }
         public void TilfBruger()
         {
-
-            OnPropertyChanged("navn");
-            OnPropertyChanged("Email");
-            OnPropertyChanged("Saldo");
-            OnPropertyChanged("password");
-            OnPropertyChanged("Mobil");
 
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
             string insertSql;
-            if (!Update)
+            if (Update)
             {
-                insertSql = "insert into dbo.Kunde (Navn, Email, Saldo, Mobil, Password) values ('" +
-                                      navn + "','" + Email + "','" + Saldo + "','" + Mobil + "','" + password + "')";
+                insertSql = "UPDATE dbo.Kunde SET Navn='" + navn + "', Email='" + Email + "', Saldo='" + Saldo + "', Mobil='" + Mobil + "', Password='" + password + "' WHERE KundeID='" + RedigVar + "';";
+            }
+            else if (TankOp)
+            {
+                int Result = Int32.Parse(Saldo) + NuvSaldo;
+                string res = Result.ToString();
+                Debug.WriteLine(Saldo);
+                Debug.WriteLine(res);
+                insertSql = "UPDATE dbo.Kunde SET Saldo='" + res + "' WHERE KundeID='" + RedigVar + "';";
+                
             }
             else
             {
-                
-                insertSql = "UPDATE dbo.Kunde SET Navn='" + navn + "', Email='" + Email + "', Saldo='" + Saldo + "', Mobil='" + Mobil + "', Password='" + password + "' WHERE KundeID='" + RedigVar + "';";
-                
+                insertSql = "insert into dbo.Kunde (Navn, Email, Saldo, Mobil, Password) values ('" +
+                                      navn + "','" + Email + "','" + Saldo + "','" + Mobil + "','" + password + "')";
+               
             }
 
 
@@ -71,12 +106,20 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             connection.Open();
             try{
                 command.ExecuteNonQuery();
+
                 if (Update)
                 {
                     MessageBoxResult res = MessageBox.Show("Redigering er fuldført.");
                     status = "Redigeret!";
                     OnPropertyChanged("status");
                     Update = false;
+                }
+                else if (TankOp)
+                {
+                    status = "Tank op fuldført";
+                    MessageBoxResult ss = MessageBox.Show("Tank op fuldført");
+                    OnPropertyChanged("status");
+                    TankOp = false;
                 }
                 else
                 {
@@ -105,7 +148,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             
             if (RedigVar > 0)
             {
-                MessageBoxResult res = MessageBox.Show("Redigering kan foretages nu!");
+                MessageBoxResult res = MessageBox.Show("Redigering kan foretages nu!\nSkriv venligst alle informationerne til redigering\nAlle felter vil blive redigeret ud fra hvad der står uanset om felterne er tomme");
                 status = "Redigering kan nu foretages.";
                 OnPropertyChanged("status");
             }
@@ -118,12 +161,12 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             {
                 string str = ListView.Remove(0, 9);
                 string result = "";
-                for (int i = 0; i < str.Length; i++) // loop over the complete input
+                for (int i = 0; i < str.Length; i++) 
                 {
-                    if (Char.IsDigit(str[i])) //check if the current char is digit
+                    if (Char.IsDigit(str[i])) 
                         result += str[i];
                     else
-                        break; //Stop the loop after the first character
+                        break; 
                 }
                 RedigVar = Int16.Parse(result);
             }
@@ -170,11 +213,19 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             
             OnPropertyChanged("søgefelt");
             string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
-
+            string selectSql ="";
             SqlConnection connection = new SqlConnection(connectionString);
-
-            string selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where Navn LIKE '%" + søgefelt+ "%'");
-
+            try
+            {
+                if (Char.IsDigit(søgefelt[0]))
+                {
+                    selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where Mobil LIKE '%" + søgefelt + "%'");
+                }
+                else
+                {
+                    selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where Navn LIKE '%" + søgefelt + "%'");
+                }
+            
             SqlCommand command = new SqlCommand(selectSql, connection);
 
             connection.Open();
@@ -201,6 +252,11 @@ namespace CafeDiamondCemesterProjekt.ViewModel
 
             ListeTilView = KundeList;
             OnPropertyChanged("ListeTilView");
+            }
+            catch
+            {
+                MessageBoxResult res = MessageBox.Show("Der skal stå noget i søgefeltet for at kunne søge på en kunde");
+            }
         }
 
 
@@ -213,5 +269,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+        
     }
 }

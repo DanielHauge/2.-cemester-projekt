@@ -18,7 +18,7 @@
         <Label Content="Søg Bruger :" HorizontalAlignment="Left" Margin="410,17,0,0" VerticalAlignment="Top" Foreground="Black" Width="95" Height="28" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="510,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Text="{Binding søgefelt, Mode=OneWayToSource}"/>
         <Button Content="Søg" HorizontalAlignment="Left" Margin="789,17,0,0" VerticalAlignment="Top" Width="66" Height="25" Command="{Binding SøgFunktion, Mode=OneWay}"/>
-        <Button Content="Tank Op" HorizontalAlignment="Left" Margin="620,403,0,0" VerticalAlignment="Top" Width="109" Height="21" IsEnabled="False"/>
+        <Button Content="Tank Op" HorizontalAlignment="Left" Margin="620,403,0,0" VerticalAlignment="Top" Width="109" Height="21" Command="{Binding TankOpRelay, Mode=OneWay}"/>
         <Grid HorizontalAlignment="Left" Height="401" Margin="26,23,0,0" VerticalAlignment="Top" Width="358">
             <Button Content="Opret / Rediger" HorizontalAlignment="Left" Margin="86,266,0,0" VerticalAlignment="Top" Width="180" Command="{Binding TilføjBruger, Mode=OneWay}"/>
             <Grid Margin="0,10,-28,-27">
