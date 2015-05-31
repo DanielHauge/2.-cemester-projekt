@@ -33,9 +33,8 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public ICommand TjekKunde { get { RelayCommand _relay = new RelayCommand(Tjek); return _relay; } }
         private void Tjek()
         {
-            OnPropertyChanged("BMobil");
 
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -70,7 +69,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public ICommand SletBooking { get { RelayCommand _relay = new RelayCommand(Slet); return _relay; } }
         private void Slet()
         {
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
             string result = "";
             try
             {
@@ -120,14 +119,9 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public ICommand TilføjBooking { get { RelayCommand _relay = new RelayCommand(TilfBooking); return _relay; } }
         private void TilfBooking()
         {
-            OnPropertyChanged("Bbord");
-            OnPropertyChanged("Bdato");
-
-
-
             // Find KID på kunde ved tjek Kunde
 
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -157,7 +151,6 @@ namespace CafeDiamondCemesterProjekt.ViewModel
             Debug.Write("TRYK");
             OnPropertyChanged("BookingTilView");
             OnPropertyChanged("BookingTilView2");
-            OnPropertyChanged("BookingViewDato");
             DagsListe();
             SpecifikDag();
             OnPropertyChanged("BookingTilView");
@@ -165,7 +158,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         }
         private void SpecifikDag()
         {
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
             OnPropertyChanged("bookingViewDato");
             SqlConnection connection = new SqlConnection(connectionString);
             string Specdato = bookingViewDato.ToShortDateString();
@@ -199,7 +192,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         }
         private void DagsListe()
         {
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
             string idagdato = DateTime.Today.ToShortDateString();

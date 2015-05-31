@@ -51,7 +51,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
                 status = "Tank Op, ret i Saldo og tryk Opret/Rediger.";
                 OnPropertyChanged("status");
             }
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
             string selectSql = ("select KundeID, Navn, Email, Saldo, Mobil, Password from dbo.Kunde where KundeID LIKE '%" + RedigVar+ "%'");
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(selectSql, connection);
@@ -75,7 +75,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public void TilfBruger()
         {
 
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -178,7 +178,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         public ICommand SletKunde { get { RelayCommand _relay = new RelayCommand(Slet); return _relay; } }
         private void Slet()
         {
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
             OnPropertyChanged("RedigVar");
             SqlConnection connection = new SqlConnection(connectionString);
                 FindRedigVar();
@@ -212,7 +212,7 @@ namespace CafeDiamondCemesterProjekt.ViewModel
         {
             
             OnPropertyChanged("søgefelt");
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\DB\DB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='|DataDirectory|\DB\DB.mdf';Integrated Security=True";
             string selectSql ="";
             SqlConnection connection = new SqlConnection(connectionString);
             try
