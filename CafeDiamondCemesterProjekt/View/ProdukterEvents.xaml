@@ -1,54 +1,95 @@
-﻿<Page x:Class="CafeDiamondCemesterProjekt.View.ProdukterEvents"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ViewModel="clr-namespace:CafeDiamondCemesterProjekt.ViewModel" x:Class="CafeDiamondCemesterProjekt.View.ProdukterEvents" 
       mc:Ignorable="d"
-	Title="ProdukterEvents">
+	Title="ProdukterEvents" Width="880">
+
+    <Page.DataContext>
+        <ViewModel:EventsHandler/>
+    </Page.DataContext>
 
     <Grid Margin="0,0,72,0">
-        <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" Height="825" Margin="0,0,0,-87">
+        <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" Height="512" Width="869" Margin="0,10,-61,0">
             <TabItem Header="Produkter" FontSize="18">
-                <TabControl Margin="10,10,2,118" TabStripPlacement="Left" IsSynchronizedWithCurrentItem="True" Background="#FFE4E4E4">
+                <TabControl Margin="10,10,14,17" TabStripPlacement="Left" IsSynchronizedWithCurrentItem="True" Background="#FFE4E4E4">
                     <TabItem Header="Vandpibe">
-                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,61" Width="656">
-                            <TextBox HorizontalAlignment="Left" Height="152" Margin="10,327,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="624"/>
-                            <Image HorizontalAlignment="Left" Height="229" Margin="10,13,0,0" VerticalAlignment="Top" Width="275"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="514,276,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-                            <CheckBox Content="På lager" HorizontalAlignment="Left" Margin="514,303,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,22" Width="656">
+                            <Label Content="Overskrift:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Pris" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="5,107,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding VPNavn}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding VPPris}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding VPBeskrivelse}" VerticalAlignment="Top" Width="306"/>
+                            <ListView x:Name="VPListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding VPListe}"/>
+                            <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretVP, Mode=OneWay}"/>
+                            <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletVandp, Mode=OneWay}"/>
+                            <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerVP, Mode=OneWay}"/>
+                            <Button Content="Updater" HorizontalAlignment="Left" Margin="431,120,0,0" VerticalAlignment="Top" Width="215" Command="{Binding UpdaterVPListe, Mode=OneWay}"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Drikkevare">
-                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,61" Width="656">
-                            <TextBox HorizontalAlignment="Left" Height="152" Margin="10,327,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="624"/>
-                            <Image HorizontalAlignment="Left" Height="229" Margin="10,13,0,0" VerticalAlignment="Top" Width="275"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="514,276,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-                            <CheckBox Content="På lager" HorizontalAlignment="Left" Margin="514,303,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                        <Grid Background="#FFE5E5E5" Margin="42,10,37,22" Width="656">
+                            <Label Content="Overskrift:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Pris" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="5,107,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding DVNavn}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding DVPris}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding DVBeskrivelse}" VerticalAlignment="Top" Width="306"/>
+                            <ListView x:Name="DVListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}" ItemsSource="{Binding DVListe}"/>
+                            <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretDV, Mode=OneWay}"/>
+                            <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletDrikkeV, Mode=OneWay}"/>
+                            <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerDV, Mode=OneWay}"/>
+                            <Button Content="Updater" HorizontalAlignment="Left" Margin="431,120,0,0" VerticalAlignment="Top" Width="215" Command="{Binding UpdaterDVListe, Mode=OneWay}"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Snacks">
-                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,61" Width="656">
-                            <TextBox HorizontalAlignment="Left" Height="152" Margin="10,327,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="624"/>
-                            <Image HorizontalAlignment="Left" Height="229" Margin="10,13,0,0" VerticalAlignment="Top" Width="275"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="514,276,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-                            <CheckBox Content="På lager" HorizontalAlignment="Left" Margin="514,303,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,22" Width="656">
+                            <Label Content="Overskrift:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Pris" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="5,107,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding SNavn}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding SPris}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding SBeskrivelse}" VerticalAlignment="Top" Width="306"/>
+                            <ListView x:Name="SListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}" ItemsSource="{Binding SListe}"/>
+                            <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretS, Mode=OneWay}"/>
+                            <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletSnack, Mode=OneWay}"/>
+                            <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerS, Mode=OneWay}"/>
+                            <Button Content="Updater" HorizontalAlignment="Left" Margin="431,120,0,0" VerticalAlignment="Top" Width="215" Command="{Binding UpdaterSListe, Mode=OneWay}"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Diverse">
-                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,61" Width="656">
-                            <TextBox HorizontalAlignment="Left" Height="152" Margin="10,327,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="624"/>
-                            <Image HorizontalAlignment="Left" Height="229" Margin="10,13,0,0" VerticalAlignment="Top" Width="275"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="514,276,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-                            <CheckBox Content="På lager" HorizontalAlignment="Left" Margin="514,303,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                        <Grid Background="#FFE5E5E5" Margin="0,10,-5,22" Width="656">
+                            <Label Content="Overskrift:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Pris" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="5,107,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding DVNavn}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding DPris}" VerticalAlignment="Top" Width="306"/>
+                            <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding DBeskrivelse}" VerticalAlignment="Top" Width="306"/>
+                            <ListView x:Name="DListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}" ItemsSource="{Binding DListe}"/>
+                            <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretD, Mode=OneWay}"/>
+                            <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletDiv, Mode=OneWay}"/>
+                            <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerD, Mode=OneWay}"/>
+                            <Button Content="Updater" HorizontalAlignment="Left" Margin="431,120,0,0" VerticalAlignment="Top" Width="215" Command="{Binding UpdaterDListe, Mode=OneWay}"/>
                         </Grid>
                     </TabItem>
                 </TabControl>
             </TabItem>
             <TabItem Header="Events" FontSize="18">
-                <Grid Opacity="0.9">
-                    <Grid.Background>
-                        <ImageBrush/>
-                    </Grid.Background>
+                <Grid Background="#FFE5E5E5" Margin="10,6,12,13">
+                    <ListView x:Name="VPListe4" HorizontalAlignment="Left" Height="437" Margin="332,10,0,0" VerticalAlignment="Top" Width="499" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}"/>
+                    <Label Content="Overskrift" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="37" Width="108"/>
+                    <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Height="37" Width="108"/>
+                    <TextBox HorizontalAlignment="Left" Height="37" Margin="123,49,0,0" TextWrapping="Wrap" Text="{Binding EvtOverskrift}" VerticalAlignment="Top" Width="204"/>
+                    <TextBox HorizontalAlignment="Left" Height="116" Margin="123,91,0,0" TextWrapping="Wrap" Text="{Binding Evtbeskrivelse}" VerticalAlignment="Top" Width="204"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="123,12,0,0" VerticalAlignment="Top" Width="204"/>
+                    <Label Content="Dato" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Height="37" Width="108"/>
+                    <Button Content="Opret" HorizontalAlignment="Left" Margin="123,212,0,0" VerticalAlignment="Top" Width="204" Command="{Binding OpretEvent, Mode=OneWay}"/>
+                    <Button Content="Slet" HorizontalAlignment="Left" Margin="123,245,0,0" VerticalAlignment="Top" Width="204" Command="{Binding SletEvent, Mode=OneWay}"/>
+                    <Button Content="Rediger" HorizontalAlignment="Left" Margin="123,278,0,0" VerticalAlignment="Top" Width="204" Command="{Binding RedigerEvent, Mode=OneWay}"/>
+                    <Button Content="Updater" HorizontalAlignment="Left" Margin="123,311,0,0" VerticalAlignment="Top" Width="204" Height="45" Command="{Binding UpdaterEventListe, Mode=OneWay}"/>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -133,6 +133,7 @@
     </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Kunde.cs" />
+    <Compile Include="ViewModel\EventsHandler.cs" />
     <Compile Include="ViewModel\Viewmodel.cs" />
     <Compile Include="ViewModel\ViewModelBooking.cs" />
     <Compile Include="View\Bookinger.xaml.cs">
@@ -152,7 +153,6 @@
     <Compile Include="Model\Adminstrator.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Info.cs" />
-    <Compile Include="Model\InfoElement.cs" />
     <Compile Include="Model\Kalender.cs" />
     <Compile Include="Model\KundeHandler.cs" />
     <Compile Include="Model\Produkt.cs" />
