@@ -23,7 +23,7 @@
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding VPNavn}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding VPPris}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding VPBeskrivelse}" VerticalAlignment="Top" Width="306"/>
-                            <ListView x:Name="VPListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding VPListe}"/>
+                            <ListView x:Name="VPListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding VPListe}" SelectedValue="{Binding VPListView}"/>
                             <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretVP, Mode=OneWay}"/>
                             <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletVandp, Mode=OneWay}"/>
                             <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerVP, Mode=OneWay}"/>
@@ -38,7 +38,7 @@
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding DVNavn}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding DVPris}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding DVBeskrivelse}" VerticalAlignment="Top" Width="306"/>
-                            <ListView x:Name="DVListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}" ItemsSource="{Binding DVListe}"/>
+                            <ListView x:Name="DVListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding DVListView}" ItemsSource="{Binding DVListe}"/>
                             <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretDV, Mode=OneWay}"/>
                             <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletDrikkeV, Mode=OneWay}"/>
                             <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerDV, Mode=OneWay}"/>
@@ -53,7 +53,7 @@
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding SNavn}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding SPris}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding SBeskrivelse}" VerticalAlignment="Top" Width="306"/>
-                            <ListView x:Name="SListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}" ItemsSource="{Binding SListe}"/>
+                            <ListView x:Name="SListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding SListView}" ItemsSource="{Binding SListe}"/>
                             <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretS, Mode=OneWay}"/>
                             <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletSnack, Mode=OneWay}"/>
                             <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerS, Mode=OneWay}"/>
@@ -68,7 +68,7 @@
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,14,0,0" TextWrapping="Wrap" Text="{Binding DVNavn}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="30" Margin="106,48,0,0" TextWrapping="Wrap" Text="{Binding DPris}" VerticalAlignment="Top" Width="306"/>
                             <TextBox HorizontalAlignment="Left" Height="93" Margin="106,87,0,0" TextWrapping="Wrap" Text="{Binding DBeskrivelse}" VerticalAlignment="Top" Width="306"/>
-                            <ListView x:Name="DListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}" ItemsSource="{Binding DListe}"/>
+                            <ListView x:Name="DListe" HorizontalAlignment="Left" Height="216" Margin="10,185,0,0" VerticalAlignment="Top" Width="636" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding DListView}" ItemsSource="{Binding DListe}"/>
                             <Button Content="Opret" HorizontalAlignment="Left" Margin="431,16,0,0" VerticalAlignment="Top" Width="215" Command="{Binding OpretD, Mode=OneWay}"/>
                             <Button Content="Slet" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Width="215" Command="{Binding SletDiv, Mode=OneWay}"/>
                             <Button Content="Rediger" HorizontalAlignment="Left" Margin="431,83,0,0" VerticalAlignment="Top" Width="215" Command="{Binding RedigerD, Mode=OneWay}"/>
@@ -79,7 +79,7 @@
             </TabItem>
             <TabItem Header="Events" FontSize="18">
                 <Grid Background="#FFE5E5E5" Margin="10,6,12,13">
-                    <ListView x:Name="VPListe4" HorizontalAlignment="Left" Height="437" Margin="332,10,0,0" VerticalAlignment="Top" Width="499" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding ListView}"/>
+                    <ListView x:Name="VPListe4" HorizontalAlignment="Left" Height="437" Margin="332,10,0,0" VerticalAlignment="Top" Width="499" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding EvtListView}" ItemsSource="{Binding EventListe}"/>
                     <Label Content="Overskrift" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="37" Width="108"/>
                     <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Height="37" Width="108"/>
                     <TextBox HorizontalAlignment="Left" Height="37" Margin="123,49,0,0" TextWrapping="Wrap" Text="{Binding EvtOverskrift}" VerticalAlignment="Top" Width="204"/>

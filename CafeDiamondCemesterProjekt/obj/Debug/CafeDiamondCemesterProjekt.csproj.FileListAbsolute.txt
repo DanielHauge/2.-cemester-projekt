@@ -145,3 +145,7 @@ C:\Users\Turkmen\Desktop\Projekt github\2.-cemester-projekt\CafeDiamondCemesterP
 C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\RAMAL\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt_MarkupCompile.lref
 C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.exe.manifest
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\bin\Debug\CafeDiamondCemesterProjekt.application
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.exe.manifest
+C:\Users\Daniel\Documents\GitHub\2.-cemester-projekt\CafeDiamondCemesterProjekt\obj\Debug\CafeDiamondCemesterProjekt.application
